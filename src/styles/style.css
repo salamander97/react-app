@@ -13,9 +13,12 @@ html,
 body {
   margin: 0;
   padding: 0;
+  width: 100%;
   height: 100%;
-  /* Đặt chiều cao cho body */
+  overflow-x: hidden; /* Ngăn cuộn ngang nếu có */
+  background-color: #1a1a1a; /* Màu nền đồng bộ với màu nền trang */
 }
+
 
 header {
   position: fixed;
@@ -50,7 +53,6 @@ footer {
   /* Cho phép cuộn nếu nội dung quá dài */
   height: calc(100% - 120px);
   /* Chiều cao trừ đi chiều cao của header và footer */
-  padding: 20px;
   /* Đệm cho nội dung */
 }
 /* CSS cho menu items */

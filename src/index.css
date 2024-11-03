@@ -19,3 +19,16 @@ code {
 .footer {
   clear: both;
 }
+/* Đặt các thuộc tính sau trong file CSS tổng của bạn (ví dụ: index.css) */
+html, body {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    overflow-x: hidden; /* Ngăn cuộn ngang không cần thiết */
+}
+
+/* Đảm bảo thẻ App bao phủ toàn bộ chiều rộng */
+.App {
+    width: 100vw;
+    overflow-x: hidden;
+}

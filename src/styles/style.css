@@ -498,7 +498,9 @@ ent p {
     width: 50%;
     margin-top: 0.5rem;
   }
-
+  .footer {
+    position: sticky;
+  }
   .logo {
     width: 75px !important;
     height: 75px !important;

@@ -99,7 +99,7 @@ const HomePage = () => {
       </div>
 
       {/* Về Chúng Tôi Section */}
-      <section className="relative py-12 md:py-24"> {/* Adjusted padding */}
+      <section className="relative py-12 md:py-24 pb-24"> {/* Adjusted padding */}
         <div className="relative max-w-7xl mx-auto px-4">
           <div className="grid md:grid-cols-2 gap-8 md:gap-12 items-center"> {/* Adjusted gap */}
 

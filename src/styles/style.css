@@ -41,7 +41,7 @@ footer {
   /* hoặc chiều cao bạn muốn */
   background-color: #B8860B;
   /* Màu nền */
-  /* z-index: 1000; Đảm bảo footer luôn trên cùng */
+  z-index: 1000;
 }
 
 .main-content {

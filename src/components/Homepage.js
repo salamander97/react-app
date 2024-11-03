@@ -2,12 +2,16 @@ import React from 'react';
 import Header from './Header';
 import Footer from './Footer';
 import Slider from 'react-slick';
-
+import chuaBaiDinh from '../assets/images/congtrinhthicong/chuabaidinh.jpeg';
+import mandalaTayThien from '../assets/images/congtrinhthicong/mandalaTayThien.jpg';
+import chuaTamChuc from '../assets/images/congtrinhthicong/chuatamchuc.jpeg';
+import fansipan from '../assets/images/congtrinhthicong/tuongphatfansipan.jpg';
 const HomePage = () => {
   const featuredProjects = [
-    { id: 1, title: "Chùa Bái Đính", description: "Các công trình chùa Bái Đính", image: "/api/placeholder/600/400" },
-    { id: 2, title: "Đại bảo tháp Mandala", description: "Các công trình đại bảo tháp Mandala", image: "/api/placeholder/600/400" },
-    { id: 3, title: "Chùa Tam Chúc", description: "Các công trình chùa Tam Chúc", image: "/api/placeholder/600/400" },
+    { id: 1, title: "Chùa Bái Đính", description: "Các công trình chùa Bái Đính", image: chuaBaiDinh },
+    { id: 2, title: "Đại bảo tháp Mandala", description: "Các công trình đại bảo tháp", image: mandalaTayThien },
+    { id: 3, title: "Chùa Tam Chúc", description: "Các công trình chùa Tam Chúc", image: chuaTamChuc },
+    { id: 4, title: "Tượng Phật đỉnh Fansipan", description: "Tượng Phật trên đỉnh Fansipan", image: fansipan },
   ];
 
   const settings = {

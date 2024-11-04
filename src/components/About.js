@@ -171,7 +171,7 @@ const AboutPage = () => {
                             </span>
                         </h1>
                         <p className="font-quicksand text-xl text-[#FFD700] max-w-3xl mx-auto font-medium leading-relaxed tracking-wide">
-                            Chuyên tạo tác các công trình Phật giáo quy mô lớn, thúc tượng Phật,
+                            Chuyên chế tạo các công trình Phật giáo quy mô lớn, thúc tượng Phật,
                             chế tác Mandala và các tác phẩm chuyển chú Mật tông
                         </p>
                     </motion.div>
@@ -397,7 +397,6 @@ const AboutPage = () => {
                                             </div>
                                         </motion.div>
                                     )}
-
                                 </motion.div>
                             </AnimatePresence>
                         </div>

@@ -63,7 +63,7 @@ const HomePage = () => {
   };
 
   return (
-    <div className="relative min-h-screen bg-[#1a1a1a] overflow-x-hidden">
+    <div className="relative min-h-screen bg-[#1a1a1a]">
       {/* Single Mandala Pattern Background */}
       <div className="fixed inset-0 pointer-events-none">
         <div className="absolute inset-0 bg-black/40">
@@ -104,12 +104,7 @@ const HomePage = () => {
           {/* Decorative Frame with Buddhist elements */}
           <div className="absolute inset-0 flex items-center justify-center">
             {/* Decorative Border Lines with Buddhist Pattern */}
-            <div className="absolute inset-x-4 md:inset-x-40 bottom-0 h-[2px] bg-gradient-to-r from-transparent via-[#B8860B] to-transparent">
-              <div className="absolute inset-0 flex justify-center space-x-8">
-                {[...Array(5)].map((_, i) => (
-                  <div key={i} className="w-4 h-4 -mb-2 border-2 border-[#B8860B] transform rotate-45 opacity-50" />
-                ))}
-              </div>
+            <div className="ke-ngang absolute inset-x-4 md:inset-x-40 bottom-0 h-[2px] bg-gradient-to-r from-transparent via-[#B8860B] to-transparent">
             </div>
           </div>
 

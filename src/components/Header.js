@@ -38,12 +38,12 @@ const Header = () => {
                         <img src={logo} alt="logo" className="w-20 h-20 rounded-full" />
                     </div>
                     <NavLink to="/" className="flex items-center">
-                        <h1 className="header-title text-white font-bold text-3xl" style={{ fontFamily: 'UTM Bienvenue' }}>
+                        <h1 className="header-title font-bold text-3xl bg-clip-text text-transparent bg-gradient-to-r from-yellow-400 via-yellow-100  to-yellow-400" style={{ fontFamily: 'UTM Bienvenue' }}>
                             ĐỒNG MỸ NGHỆ VIỆT TRUNG
                         </h1>
                     </NavLink>
                 </div>
-                <div className="navigation flex items-center">
+                <div className="font-philosopher text-xl navigation flex items-center ">
                     <nav className="hidden md:block">
                         <ul className="flex space-x-6">
                             <li>

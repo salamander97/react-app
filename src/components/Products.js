@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
 import { useParams, Link } from 'react-router-dom';
 import Header from './Header';
-import Footer from './Footer';
 import chuaBaiDinh from '../assets/images/congtrinhthicong/chuabaidinh.jpeg';
 import mandalaTayThien from '../assets/images/congtrinhthicong/mandalaTayThien.jpg';
 import chuaTamChuc from '../assets/images/congtrinhthicong/chuatamchuc.jpeg';
@@ -35,6 +34,7 @@ const ImageModal = ({ isOpen, onClose, image, title }) => {
 
 const productData = {
   1: {
+    id: 1,
     title: "Chùa Bái Đính",
     description: "Các công trình chùa Bái Đính",
     image: chuaBaiDinh,
@@ -42,6 +42,7 @@ const productData = {
     features: ["Điện thờ chính", "Tượng Phật", "Cổng tam quan", "Hành lang La Hán"]
   },
   2: {
+    id: 2,
     title: "Đại bảo tháp Mandala",
     description: "Các công trình đại bảo tháp",
     image: mandalaTayThien,
@@ -49,6 +50,7 @@ const productData = {
     features: ["Kiến trúc Mandala", "Phù điêu nghệ thuật", "Không gian thiền định", "Bảo tháp trung tâm"]
   },
   3: {
+    id: 3,
     title: "Chùa Tam Chúc",
     description: "Các công trình chùa Tam Chúc",
     image: chuaTamChuc,
@@ -56,6 +58,7 @@ const productData = {
     features: ["Điện thờ", "Vườn cảnh quan", "Hồ Tam Chúc", "Tượng Phật"]
   },
   4: {
+    id: 4,
     title: "Tượng Phật đỉnh Fansipan",
     description: "Tượng Phật trên đỉnh Fansipan",
     image: fansipan,
@@ -70,42 +73,78 @@ const Products = () => {
   const product = productData[productId];
   const [selectedImage, setSelectedImage] = useState(null);
 
-  // Khi không có `id` trong URL, hiển thị danh sách tất cả các sản phẩm
-  if (!product) {
-    return (
-      <div className="min-h-screen bg-black text-amber-500">
-        <Header />
-        <main className="container mx-auto px-4 py-8">
-          <h1 className="text-3xl font-bold text-center mb-8">Các Công Trình</h1>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {Object.entries(productData).map(([productId, product]) => (
-              <Link to={`/products/${productId}`} key={productId} className="group">
-                <div className="bg-amber-900/20 rounded-lg overflow-hidden shadow-lg border border-amber-500/30">
-                  <img
-                    src={product.image}
-                    alt={product.title}
-                    className="w-full h-64 object-cover group-hover:opacity-80 transition-opacity"
-                  />
-                  <div className="p-4">
-                    <h3 className="text-xl font-bold text-amber-500">{product.title}</h3>
-                    <p className="text-amber-200 mt-2">{product.description}</p>
-                  </div>
-                </div>
-              </Link>
-            ))}
-          </div>
-        </main>
-        <Footer />
+  // Background Mandala Component
+  const MandalaBackground = () => (
+    <div className="fixed inset-0 pointer-events-none">
+      <div className="absolute inset-0 bg-black">
+        <svg className="absolute inset-0 w-full h-full opacity-30" viewBox="0 0 200 200">
+          <defs>
+            <filter id="shadow">
+              <feDropShadow dx="0" dy="0" stdDeviation="4" floodColor="#B8860B" floodOpacity="0.5" />
+            </filter>
+          </defs>
+          {/* Single centered mandala */}
+          {[0, 45, 90, 135, 180, 225, 270, 315].map((angle) => (
+            <g key={angle} transform={`rotate(${angle} 100 100)`}>
+              <path 
+                d="M100,60 Q120,80 100,100 Q80,80 100,60" 
+                fill="none" 
+                stroke="#B8860B" 
+                strokeWidth="1" 
+                filter="url(#shadow)" 
+              />
+              <path 
+                d="M100,40 Q130,70 100,100 Q70,70 100,40" 
+                fill="none" 
+                stroke="#B8860B" 
+                strokeWidth="1" 
+                filter="url(#shadow)" 
+              />
+            </g>
+          ))}
+        </svg>
       </div>
-    );
-  }
+    </div>
+  );
 
-  // Khi có `id` trong URL, hiển thị chi tiết sản phẩm
+  // Product list view
+// Product list view
+if (!product) {
+  return (
+    <div className="min-h-screen bg-black text-amber-500">
+      <MandalaBackground />
+      <Header />
+      <main className="container mx-auto px-4 py-8 min-h-[calc(100vh-80px)] relative z-10"> {/* 80px là chiều cao của Header */}
+        <h1 className="text-3xl font-bold text-center mb-12">Các Công Trình</h1>
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 pb-12">
+          {Object.entries(productData).map(([productId, product]) => (
+            <Link to={`/products/${productId}`} key={productId} className="group">
+              <div className="bg-amber-900/20 rounded-lg overflow-hidden shadow-lg border border-amber-500/30 backdrop-blur-sm h-full">
+                <img
+                  src={product.image}
+                  alt={product.title}
+                  className="w-full h-64 object-cover group-hover:opacity-80 transition-opacity"
+                />
+                <div className="p-4">
+                  <h3 className="text-xl font-bold text-amber-500">{product.title}</h3>
+                  <p className="text-amber-200 mt-2">{product.description}</p>
+                </div>
+              </div>
+            </Link>
+          ))}
+        </div>
+      </main>
+    </div>
+  );
+}
+
+  // Product detail view
   return (
     <div className="min-h-screen bg-black">
+      <MandalaBackground />
       <Header />
       
-      <main className="container mx-auto px-4 py-8">
+      <main className="container mx-auto px-4 py-8 min-h-[calc(100vh-80px)] relative z-10">
         <div className="relative h-96 mb-12">
           <img 
             src={product.image} 
@@ -121,14 +160,14 @@ const Products = () => {
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
           <div className="space-y-6">
-            <div className="bg-amber-900/20 p-6 rounded-lg border border-amber-500/30">
+            <div className="backdrop-blur-sm bg-amber-900/20 p-6 rounded-lg border border-amber-500/30">
               <h2 className="text-2xl text-amber-500 mb-4">Chi tiết công trình</h2>
               <p className="text-amber-200 leading-relaxed">
                 {product.details}
               </p>
             </div>
 
-            <div className="bg-amber-900/20 p-6 rounded-lg border border-amber-500/30">
+            <div className="backdrop-blur-sm bg-amber-900/20 p-6 rounded-lg border border-amber-500/30">
               <h2 className="text-2xl text-amber-500 mb-4">Đặc điểm nổi bật</h2>
               <ul className="text-amber-200 space-y-2">
                 {product.features.map((feature, index) => (
@@ -141,7 +180,7 @@ const Products = () => {
             </div>
           </div>
 
-          <div className="bg-amber-900/20 p-6 rounded-lg border border-amber-500/30">
+          <div className="backdrop-blur-sm bg-amber-900/20 p-6 rounded-lg border border-amber-500/30">
             <h2 className="text-2xl text-amber-500 mb-4">Hình ảnh công trình</h2>
             <div className="grid grid-cols-2 gap-4">
               {[1, 2, 3, 4].map((num) => (
@@ -164,28 +203,25 @@ const Products = () => {
         <div className="mt-16">
           <h2 className="text-2xl text-amber-500 mb-8">Các công trình liên quan</h2>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            {Object.values(productData)
-              .filter(p => p.title !== product.title)
+            {Object.entries(productData)
+              .filter(([key, p]) => p.title !== product.title)
               .slice(0, 3)
-              .map((relatedProduct, index) => (
-                <div 
-                  key={index}
-                  className="bg-amber-900/20 rounded-lg overflow-hidden border border-amber-500/30"
+              .map(([key, relatedProduct]) => (
+                <Link 
+                  key={key}
+                  to={`/products/${relatedProduct.id}`}
+                  className="backdrop-blur-sm bg-amber-900/20 rounded-lg overflow-hidden border border-amber-500/30"
                 >
                   <img 
                     src={relatedProduct.image}
                     alt={relatedProduct.title}
                     className="w-full h-48 object-cover cursor-pointer hover:opacity-80 transition-opacity"
-                    onClick={() => setSelectedImage({ 
-                      src: relatedProduct.image, 
-                      title: relatedProduct.title 
-                    })}
                   />
                   <div className="p-4">
                     <h3 className="text-lg text-amber-500">{relatedProduct.title}</h3>
                     <p className="text-amber-200 text-sm mt-2">{relatedProduct.description}</p>
                   </div>
-                </div>
+                </Link>
               ))}
           </div>
         </div>
@@ -197,8 +233,6 @@ const Products = () => {
         image={selectedImage?.src}
         title={selectedImage?.title}
       />
-
-      <Footer />
     </div>
   );
 };

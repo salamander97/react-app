@@ -47,3 +47,24 @@ html, body {
   height: 100%;
   overflow-x: hidden; /* Ngăn chặn cuộn ngang không mong muốn */
 }
+:root {
+  --background-light: #ffffff;
+  --text-light: #1a1a1a;
+  --background-dark: #1a1a1a;
+  --text-dark: #ffffff;
+}
+
+/* Default light theme styles */
+body {
+  background-color: var(--background-light);
+  color: var(--text-light);
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+/* Dark theme styles */
+body.dark {
+  background-color: var(--background-dark);
+  color: var(--text-dark);
+}
+
+/* Thêm các styles khác cho dark mode nếu cần */

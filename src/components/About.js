@@ -227,36 +227,72 @@ const AboutPage = () => {
                                 >
                                     {/* Giới Thiệu */}
                                     {activeTab === 'introduce' && (
-                                        <motion.div variants={containerVariants}>
+                                        <motion.div
+                                            variants={containerVariants}
+                                            className="px-4 md:px-6 lg:px-8"
+                                        >
                                             <motion.h2
                                                 variants={itemVariants}
-                                                className="font-philosopher text-3xl font-bold mb-8 text-[#D4AF37] relative inline-block"
+                                                className="font-philosopher text-3xl font-bold mb-12 text-[#D4AF37] relative inline-block"
                                             >
                                                 Giới Thiệu
                                                 <div className="absolute -bottom-2 left-0 w-full h-0.5 bg-gradient-to-r from-[#D4AF37] to-transparent"></div>
                                             </motion.h2>
-                                            <div className="font-philosopher content leading-relaxed space-y-6 text-white">
-                                                <p className="text-lg">
-                                                    Là một trong năm làng nghề nổi tiếng nhất Việt Nam, <strong>Đồng mỹ nghệ VIỆT TRUNG</strong> tự hào không chỉ với bề dày lịch sử mà còn với kỹ thuật thúc đồng mỹ nghệ tinh xảo, đạt đến trình độ cao. Chúng tôi đã không ngừng cống hiến và nỗ lực, từ những ngày đầu thành lập với xưởng nhỏ đến nay đã trở thành một thương hiệu nổi bật, chuyên sâu vào các sản phẩm đồ thờ cúng, đồ phong thủy, và đặc biệt là các công trình <strong>nghệ thuật mật tông</strong>.
-                                                </p>
-                                                <p className="text-lg">
-                                                    Để đạt được vị thế như hiện tại, <strong>Đồng mỹ nghệ VIỆT TRUNG</strong> luôn đặt yếu tố chất lượng và giá trị văn hóa truyền thống lên hàng đầu, phục vụ cho tâm linh của cộng đồng Phật tử và những ai có niềm tin vào đạo Phật. Một trong những điểm nhấn quan trọng mà chúng tôi luôn tự hào là khả năng thực hiện các công trình <strong>chuyển chú , mandala </strong> – một lĩnh vực phức tạp đòi hỏi cả tay nghề cao và sự tôn kính, hiểu biết sâu sắc về tôn giáo.
-                                                </p>
-                                                <p className="text-lg">
-                                                    Chúng tôi đã mạnh dạn đầu tư vào công nghệ hiện đại, đào tạo đội ngũ thợ lành nghề và chuyên viên để đảm bảo mỗi công trình không chỉ là một sản phẩm mà còn là một tác phẩm nghệ thuật đầy tâm huyết. Những sản phẩm như <strong>bảo tháp mandala Tây Thiên</strong> và các tác phẩm chuyển chú tinh xảo của chúng tôi là minh chứng cho những nỗ lực không ngừng nhằm bảo tồn và phát triển văn hóa tâm linh Mật tông được du nhập vào Việt Nam.
-                                                </p>
-                                                <p className="text-lg">
-                                                    Bên cạnh các công trình mật tông, <strong>Đồng mỹ nghệ VIỆT TRUNG</strong> cũng đặc biệt quan tâm và đẩy mạnh việc chế tác các sản phẩm phục vụ cho <strong>đạo Mẫu</strong>, <strong>đạo Thánh</strong> và <strong>Phật giáo Đại thừa</strong>. Với tâm niệm mỗi sản phẩm đều phải mang đậm dấu ấn văn hóa truyền thống, chúng tôi luôn tập trung vào việc bảo tồn các yếu tố tâm linh dân tộc trong từng tác phẩm.
-                                                </p>
-                                                <p className="text-lg">
-                                                    Chúng tôi luôn tâm niệm rằng, mỗi tác phẩm không chỉ là một sản phẩm mà còn là một hiện thân của tâm linh và văn hóa dân tộc. Với mỗi sản phẩm, từ những chi tiết nhỏ nhất đến tổng thể, đều chứa đựng sự tâm huyết và kỹ thuật tỉ mỉ của đội ngũ thợ lành nghề. Đây không chỉ là những vật phẩm mà còn là cầu nối tâm linh, là cách chúng tôi góp phần bảo tồn và phát huy văn hóa Việt Nam trong đời sống đương đại.
-                                                </p>
-                                                <p className="text-lg">
-                                                    Chúng tôi không ngừng học hỏi, nghiên cứu để đảm bảo rằng mỗi sản phẩm đều mang đậm giá trị truyền thống và ý nghĩa tâm linh sâu sắc. Chúng tôi luôn tin tưởng rằng những sản phẩm của mình sẽ giúp khách hàng cảm nhận được sự kết nối và tinh thần văn hóa, mang lại sự bình an và thanh tịnh cho không gian sống của họ.
-                                                </p>
-                                                <p className="text-lg">
-                                                    Với tâm nguyện đóng góp nhiều hơn nữa cho sự phát triển của nghệ thuật tâm linh Việt Nam, chúng tôi kính mong nhận được sự ủng hộ và tin tưởng từ quý thầy, quý nhà chùa và toàn thể Phật tử. Sự tin tưởng của quý vị là nguồn động lực lớn giúp chúng tôi tiếp tục sứ mệnh bảo tồn và phát huy giá trị văn hóa tâm linh dân tộc, góp phần tạo nên những công trình tâm linh ý nghĩa trên khắp đất nước.
-                                                </p>
+
+                                            <div className="font-philosopher leading-relaxed space-y-8 text-white">
+                                                <motion.div variants={itemVariants}>
+                                                    <p className="text-lg">
+                                                        Là một trong năm làng nghề chạm bạc cổ và nổi tiếng nhất Việt Nam, <strong style={{ color: '#B8860B' }}>Đồng mỹ nghệ VIỆT TRUNG</strong>
+                                                        tự hào không chỉ với bề dày lịch sử mà còn với kỹ thuật thúc đồng mỹ nghệ tinh xảo, đạt đến trình độ cao. Chúng tôi đã không ngừng cống
+                                                        hiến và nỗ lực, từ những ngày đầu thành lập với xưởng nhỏ đến nay đã trở thành một thương hiệu nổi bật, chuyên sâu vào các sản phẩm
+                                                        đồ thờ cúng, đồ phong thủy, và đặc biệt là các công trình <strong style={{ color: '#B8860B' }}>nghệ thuật mật tông</strong>.
+                                                    </p>
+                                                </motion.div>
+
+                                                <motion.div variants={itemVariants}>
+                                                    <p className="text-lg">
+                                                        Để đạt được vị thế như hiện tại, <strong style={{ color: '#B8860B' }}>Đồng mỹ nghệ VIỆT TRUNG</strong> luôn đặt yếu tố chất lượng và
+                                                        giá trị văn hóa truyền thống lên hàng đầu, phục vụ cho tâm linh của cộng đồng Phật tử và những ai có niềm tin vào đạo Phật.
+                                                        Một trong những điểm nhấn quan trọng mà chúng tôi luôn tự hào là khả năng thực hiện các công trình <strong style={{ color: '#B8860B' }}>
+                                                            chuyển chú, mandala </strong> – một lĩnh vực phức tạp đòi hỏi cả tay nghề cao và sự tôn kính, hiểu biết sâu sắc về tôn giáo.
+                                                    </p>
+                                                </motion.div>
+
+                                                <motion.div variants={itemVariants}>
+                                                    <p className="text-lg">
+                                                        Chúng tôi đã mạnh dạn đầu tư vào công nghệ hiện đại, đào tạo đội ngũ thợ lành nghề và chuyên viên để đảm bảo mỗi công trình không chỉ
+                                                        là một sản phẩm mà còn là một tác phẩm nghệ thuật đầy tâm huyết. Những sản phẩm như <strong style={{ color: '#B8860B' }}>bảo tháp
+                                                            mandala Tây Thiên</strong> và các tác phẩm chuyển chú tinh xảo của chúng tôi là minh chứng cho những nỗ lực không ngừng nhằm
+                                                        bảo tồn và phát triển văn hóa tâm linh Mật tông được du nhập vào Việt Nam.
+                                                    </p>
+                                                </motion.div>
+
+                                                <motion.div variants={itemVariants}>
+                                                    <p className="text-lg">
+                                                        Bên cạnh các công trình mật tông, <strong style={{ color: '#B8860B' }}>Đồng mỹ nghệ VIỆT TRUNG</strong> cũng đặc biệt quan tâm và
+                                                        đẩy mạnh việc chế tác các sản phẩm phục vụ cho <stron style={{ color: '#B8860B' }}>đạo Mẫu</stron>,
+                                                        <strong style={{ color: '#B8860B' }}>đạo Thánh</strong> và <strong style={{ color: '#B8860B' }}>Phật giáo Đại thừa</strong>.
+                                                        Với tâm niệm mỗi sản phẩm đều phải mang đậm dấu ấn văn hóa truyền thống, chúng tôi luôn tập trung vào việc bảo tồn các yếu tố tâm linh
+                                                        dân tộc trong từng tác phẩm.
+                                                    </p>
+                                                </motion.div>
+
+                                                <motion.div variants={itemVariants}>
+                                                    <p className="text-lg">
+                                                        Chúng tôi luôn tâm niệm rằng, mỗi tác phẩm không chỉ là một sản phẩm mà còn là một hiện thân của tâm linh và văn hóa dân tộc.
+                                                        Với mỗi sản phẩm, từ những chi tiết nhỏ nhất đến tổng thể, đều chứa đựng sự tâm huyết và kỹ thuật tỉ mỉ của đội ngũ thợ lành nghề.
+                                                        Đây không chỉ là những vật phẩm mà còn là cầu nối tâm linh, là cách chúng tôi góp phần bảo tồn và phát huy văn hóa Việt Nam trong
+                                                        đời sống đương đại.
+                                                    </p>
+                                                </motion.div>
+
+                                                <motion.div variants={itemVariants}>
+                                                    <p className="text-lg">
+                                                        Với tâm nguyện đóng góp nhiều hơn nữa cho sự phát triển của nghệ thuật tâm linh Việt Nam, chúng tôi kính mong nhận được sự ủng hộ
+                                                        và tin tưởng từ quý thầy, quý nhà chùa và toàn thể Phật tử. Sự tin tưởng của quý vị là nguồn động lực lớn giúp chúng tôi tiếp tục
+                                                        sứ mệnh bảo tồn và phát huy giá trị văn hóa tâm linh dân tộc, góp phần tạo nên những công trình tâm linh ý nghĩa trên khắp đất nước.
+                                                    </p>
+                                                </motion.div>
                                             </div>
                                         </motion.div>
                                     )}
@@ -312,27 +348,62 @@ const AboutPage = () => {
 
                                     {/* Mục Tiêu */}
                                     {activeTab === 'vision' && (
-                                        <motion.div variants={containerVariants}>
+                                        <motion.div variants={containerVariants} className="px-4 md:px-6 lg:px-8">
                                             <motion.h2
                                                 variants={itemVariants}
-                                                className="font-philosopher text-3xl font-bold mb-8 text-[#D4AF37] relative inline-block"
+                                                className="font-philosopher text-3xl font-bold mb-12 text-[#D4AF37] relative inline-block"
                                             >
-                                                Mục Tiêu
+                                                Mục Tiêu Phật Giáo
                                                 <div className="absolute -bottom-2 left-0 w-full h-0.5 bg-gradient-to-r from-[#D4AF37] to-transparent"></div>
                                             </motion.h2>
-                                            <div className="font-quicksand text-gray-300">
-                                                {/* Vision content */}
+
+                                            <div className="font-quicksand text-gray-300 space-y-12">
+                                                {/* Sản phẩm & Dịch vụ */}
+                                                <motion.div variants={itemVariants} className="bg-black/10 backdrop-blur-sm rounded-lg p-8 border border-[#D4AF37]/20">
+                                                    <h3 className="text-[#D4AF37] text-2xl font-semibold mb-6 font-philosopher">Triết Lý Sản Phẩm</h3>
+                                                    <div className="space-y-4 leading-relaxed">
+                                                        <p className="text-lg">Chúng tôi cam kết phát triển và cung cấp các sản phẩm thúc đồng mỹ nghệ phục vụ cho các nhu cầu tâm linh và lễ nghi Phật giáo:</p>
+                                                        <ul className="list-none pl-6 space-y-3">
+                                                            <li className="text-lg relative before:content-[''] before:absolute before:w-1.5 before:h-1.5 before:bg-[#D4AF37] before:rounded-full before:-left-4 before:top-2.5">Tượng Phật trang nghiêm</li>
+                                                            <li className="text-lg relative before:content-[''] before:absolute before:w-1.5 before:h-1.5 before:bg-[#D4AF37] before:rounded-full before:-left-4 before:top-2.5">Bàn thờ trang nhã</li>
+                                                            <li className="text-lg relative before:content-[''] before:absolute before:w-1.5 before:h-1.5 before:bg-[#D4AF37] before:rounded-full before:-left-4 before:top-2.5">Pháp khí mật tông</li>
+                                                        </ul>
+                                                    </div>
+                                                </motion.div>
+
+                                                {/* Mục tiêu & Cam kết */}
+                                                <motion.div variants={itemVariants} className="bg-black/10 backdrop-blur-sm rounded-lg p-8 border border-[#D4AF37]/20">
+                                                    <h3 className="text-[#D4AF37] text-2xl font-semibold mb-6 font-philosopher">Tầm Nhìn Tâm Linh</h3>
+                                                    <div className="space-y-4 leading-relaxed">
+                                                        <p className="text-lg">Mục tiêu của chúng tôi là tạo ra những sản phẩm không chỉ về mặt thẩm mỹ cao mà còn mang ý nghĩa sâu sắc về mặt tâm linh, góp phần vào việc tu tập và thực hành Phật pháp của tín đồ và các tự viện.</p>
+                                                    </div>
+                                                </motion.div>
+
+                                                {/* Hợp tác */}
+                                                <motion.div variants={itemVariants} className="bg-black/10 backdrop-blur-sm rounded-lg p-8 border border-[#D4AF37]/20">
+                                                    <h3 className="text-[#D4AF37] text-2xl font-semibold mb-6 font-philosopher">Hợp Tác Phát Triển</h3>
+                                                    <div className="space-y-4 leading-relaxed">
+                                                        <p className="text-lg">Chúng tôi cũng dự định mở rộng hợp tác với các chùa và tự viện trong và ngoài nước để phát triển các sản phẩm theo yêu cầu đặc biệt, qua đó đảm bảo rằng các nhu cầu đa dạng của cộng đồng Phật tử được đáp ứng một cách chính xác và tôn kính nhất.</p>
+                                                    </div>
+                                                </motion.div>
+
+                                                {/* Nghiên cứu & Phát triển */}
+                                                <motion.div variants={itemVariants} className="bg-black/10 backdrop-blur-sm rounded-lg p-8 border border-[#D4AF37]/20">
+                                                    <h3 className="text-[#D4AF37] text-2xl font-semibold mb-6 font-philosopher">Nghiên Cứu & Phát Triển</h3>
+                                                    <div className="space-y-4 leading-relaxed">
+                                                        <p className="text-lg">Bên cạnh đó, chúng tôi sẽ tiếp tục nghiên cứu và học hỏi từ các quý thầy, nhà chùa, những người hoan hỷ gieo duyên chỉ dạy, để tích hợp kiến thức đó vào trong quá trình thiết kế và sản xuất, nhằm đảm bảo rằng mỗi sản phẩm không chỉ là một tác phẩm nghệ thuật mà còn là một biểu tượng của sự tôn kính và hiểu biết sâu sắc về Phật giáo.</p>
+                                                    </div>
+                                                </motion.div>
                                             </div>
                                         </motion.div>
                                     )}
+
                                 </motion.div>
                             </AnimatePresence>
                         </div>
                     </div>
                 </div>
             </div>
-
-
             {/* Scroll to top button */}
             {showScrollTop && (
                 <button

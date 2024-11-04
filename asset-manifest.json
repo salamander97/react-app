@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/react-app/static/css/main.e16ba38c.css",
-    "main.js": "/react-app/static/js/main.8aa385f6.js",
+    "main.css": "/react-app/static/css/main.0cf187a5.css",
+    "main.js": "/react-app/static/js/main.c1cb4333.js",
     "static/js/453.bb828c5d.chunk.js": "/react-app/static/js/453.bb828c5d.chunk.js",
     "static/media/tuongphatfansipan.jpg": "/react-app/static/media/tuongphatfansipan.ab6a69962eb5c644a258.jpg",
     "static/media/mandalaTayThien.jpg": "/react-app/static/media/mandalaTayThien.636bac9ecf91b5ea8c0a.jpg",
@@ -15,12 +15,12 @@
     "static/media/slick.ttf": "/react-app/static/media/slick.c94f7671dcc99dce43e2.ttf",
     "static/media/slick.woff": "/react-app/static/media/slick.295183786cd8a1389865.woff",
     "index.html": "/react-app/index.html",
-    "main.e16ba38c.css.map": "/react-app/static/css/main.e16ba38c.css.map",
-    "main.8aa385f6.js.map": "/react-app/static/js/main.8aa385f6.js.map",
+    "main.0cf187a5.css.map": "/react-app/static/css/main.0cf187a5.css.map",
+    "main.c1cb4333.js.map": "/react-app/static/js/main.c1cb4333.js.map",
     "453.bb828c5d.chunk.js.map": "/react-app/static/js/453.bb828c5d.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.e16ba38c.css",
-    "static/js/main.8aa385f6.js"
+    "static/css/main.0cf187a5.css",
+    "static/js/main.c1cb4333.js"
   ]
 }

@@ -63,7 +63,7 @@ const HomePage = () => {
   };
 
   return (
-    <div className="relative min-h-screen bg-[#1a1a1a]">
+    <div className="relative min-h-screen bg-[#1a1a1a] overflow-x-hidden">
       {/* Single Mandala Pattern Background */}
       <div className="fixed inset-0 pointer-events-none">
         <div className="absolute inset-0 bg-black/40">
@@ -100,11 +100,11 @@ const HomePage = () => {
       {/* Content */}
       <div className="relative">
         {/* Stylized Hero Section */}
-        <div className="relative h-1/2 w-full overflow-hidden flex items-center justify-center py-20">
+        <div className="relative w-full overflow-hidden flex items-center justify-center py-10 md:py-20 px-4">
           {/* Decorative Frame with Buddhist elements */}
           <div className="absolute inset-0 flex items-center justify-center">
             {/* Decorative Border Lines with Buddhist Pattern */}
-            <div className="absolute inset-x-40 bottom-0 h-[2px] bg-gradient-to-r from-transparent via-[#B8860B] to-transparent">
+            <div className="absolute inset-x-4 md:inset-x-40 bottom-0 h-[2px] bg-gradient-to-r from-transparent via-[#B8860B] to-transparent">
               <div className="absolute inset-0 flex justify-center space-x-8">
                 {[...Array(5)].map((_, i) => (
                   <div key={i} className="w-4 h-4 -mb-2 border-2 border-[#B8860B] transform rotate-45 opacity-50" />
@@ -114,7 +114,7 @@ const HomePage = () => {
           </div>
 
           {/* Content */}
-          <div className="relative z-20 text-center px-4 max-w-7xl mx-auto">
+          <div className="relative z-20 text-center px-4 w-full max-w-7xl mx-auto">
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
@@ -157,8 +157,8 @@ const HomePage = () => {
         </div>
 
         {/* Về Chúng Tôi Section */}
-        <section className="relative py-24 px-4">
-          <div className="absolute inset-x-40 bottom-0 h-[2px] bg-gradient-to-r from-transparent via-[#B8860B] to-transparent"></div>
+        <section className="relative py-12 md:py-24 px-4 w-full">
+          <div className="absolute inset-x-4 md:inset-x-40 bottom-0 h-[2px] bg-gradient-to-r from-transparent via-[#B8860B] to-transparent"></div>
           <motion.div
             className="max-w-7xl mx-auto"
             initial="hidden"
@@ -245,7 +245,7 @@ const HomePage = () => {
                     >
                       <div className="font-philosopher text-4xl font-bold text-[#B8860B] mb-2">20+</div>
                       <div className="font-philosopher text-xl bg-clip-text text-transparent bg-gradient-to-r from-yellow-300 via-yellow-200 to-yellow-300">Năm Kinh Nghiệm</div>
-                      </motion.div>
+                    </motion.div>
                     <motion.div
                       className="p-6 border border-[#B8860B] rounded-lg bg-[#B8860B]/20"
                       variants={scaleIn}
@@ -253,7 +253,7 @@ const HomePage = () => {
                     >
                       <div className="font-philosopher text-4xl font-bold text-[#B8860B] mb-2">100+</div>
                       <div className="font-philosopher text-xl bg-clip-text text-transparent bg-gradient-to-r from-yellow-300 via-yellow-200 to-yellow-300">Công Trình Hoàn Thành</div>
-                      </motion.div>
+                    </motion.div>
                   </motion.div>
                   <Link to="/about">
                     <motion.button
@@ -271,8 +271,8 @@ const HomePage = () => {
         </section>
 
         {/* Công trình tiêu biểu Section */}
-        <section className="py-24 px-4">
-          <div className="absolute inset-x-40 bottom-0 h-[2px] bg-gradient-to-r from-transparent via-[#B8860B] to-transparent"></div>
+        <section className="py-12 md:py-24 px-4 w-full">
+          <div className="absolute inset-x-4 md:inset-x-40 bottom-0 h-[2px] bg-gradient-to-r from-transparent via-[#B8860B] to-transparent"></div>
           <motion.div
             className="max-w-7xl mx-auto"
             initial="hidden"
@@ -281,19 +281,20 @@ const HomePage = () => {
             variants={staggerContainer}
           >
             <motion.h2
-              className="font-philosopher text-4xl font-bold text-white mb-6"
+              // Điều chỉnh lại thứ tự responsive và kích thước font
+              className="font-philosopher text-2xl sm:text-3xl md:text-4xl font-bold text-white mb-6 text-center"
               variants={fadeInUp}
             >
-              <span className="relative inline-block px-12 bg-gradient-to-r from-[#B8860B] via-[#FFD700] to-[#B8860B] bg-clip-text text-transparent">
-              Công Trình Tiêu Biểu
+              <span className="relative inline-block px-4 sm:px-8 md:px-12 bg-gradient-to-r from-[#B8860B] via-[#FFD700] to-[#B8860B] bg-clip-text text-transparent">
+                Công Trình Tiêu Biểu
               </span>
             </motion.h2>
-            <motion.div variants={fadeInUp}>
+            <motion.div variants={fadeInUp} className="w-full">
               <Slider {...settings}>
                 {featuredProjects.map((project) => (
                   <motion.div
                     key={project.id}
-                    className="px-4"
+                    className="px-2 md:px-4"
                     whileHover={{ scale: 1.02 }}
                   >
                     <Link to={`/products/${project.id}`}>
@@ -313,11 +314,11 @@ const HomePage = () => {
         </section>
 
         {/* Cam kết Section */}
-        <section className="py-24 px-4">
+        <section className="py-12 md:py-24 px-4 w-full">
           {/* Decorative Frame */}
 
           <motion.div
-            className="max-w-7xl mx-auto"
+            className="py-12 md:py-24 px-4 w-full"
             initial="hidden"
             whileInView="visible"
             viewport={{ once: true, amount: 0.3 }}

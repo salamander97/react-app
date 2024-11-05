@@ -432,7 +432,7 @@ const Contact = () => {
             </div>
 
             {/* Custom Animations */}
-            <style jsx>{`
+            <style>{`
                     @keyframes float {
                         0% { transform: translateY(0) translateX(0); }
                         50% { transform: translateY(-20px) translateX(10px); }

@@ -91,7 +91,7 @@ const Header = () => {
 
     return (
         <>
-            <header className="bg-[#B8860B] w-full px-4 py-3 fixed top-0 left-0 z-50">
+            <header className="bg-[#B8860B] w-full px-4 py-3 sticky top-0 left-0 z-50">
                 <div className="container mx-auto flex items-center justify-between">
                     {/* Logo and Title Container */}
                     <div className="logo-title-container">

@@ -65,7 +65,7 @@ const HomePage = () => {
   return (
     <div className="relative min-h-screen bg-[#1a1a1a]">
       {/* Single Mandala Pattern Background */}
-      <div className="fixed inset-0 pointer-events-none">
+      <div className="sticky inset-0 pointer-events-none">
         <div className="absolute inset-0 bg-black/40">
           <svg className="absolute inset-0 w-full h-full opacity-30" viewBox="0 0 200 200">
             <defs>

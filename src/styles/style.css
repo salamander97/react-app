@@ -20,7 +20,7 @@ body {
 }
 /* Update header positioning */
 header {
-  position: fixed;
+  position: sticky;
   top: 0;
   left: 0;
   right: 0;
@@ -45,7 +45,7 @@ header {
 @supports (-webkit-overflow-scrolling: touch) {
   body {
     /* Prevent elastic scrolling */
-    position: fixed;
+    position: sticky;
     width: 100%;
   }
   
@@ -80,7 +80,7 @@ header {
 }
 /* Contact Buttons fixed position */
 .contact-buttons {
-  position: fixed;
+  position: sticky;
   top: 50%;
   right: 2rem;
   transform: translateY(-50%);
@@ -245,7 +245,7 @@ header {
 header {
   background-color: #B8860B;
   width: 100%;
-  position: fixed;
+  position: sticky;
   top: 0;
   left: 0;
   z-index: 50;

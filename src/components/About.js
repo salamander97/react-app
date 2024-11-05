@@ -60,7 +60,7 @@ const AboutPage = () => {
     return (
         <div className="relative min-h-screen bg-[#1a1a1a]">
             {/* Single Mandala Pattern Background */}
-            <div className="fixed inset-0 pointer-events-none">
+            <div className="sticky inset-0 pointer-events-none">
                 <div className="absolute inset-0 bg-black/40">
                     <svg className="absolute inset-0 w-full h-full opacity-30" viewBox="0 0 200 200">
                         <defs>
@@ -506,7 +506,7 @@ const AboutPage = () => {
             {showScrollTop && (
                 <button
                     onClick={scrollToTop}
-                    className="fixed bottom-8 right-8 bg-[#B8860B] text-white p-3 rounded-full shadow-lg hover:bg-[#986D0A] transition-colors duration-300 z-50"
+                    className="sticky bottom-8 right-8 bg-[#B8860B] text-white p-3 rounded-full shadow-lg hover:bg-[#986D0A] transition-colors duration-300 z-50"
                 >
                     <ChevronUp className="w-6 h-6" />
                 </button>

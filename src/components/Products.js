@@ -12,7 +12,7 @@ const ImageModal = ({ isOpen, onClose, image, title }) => {
   if (!isOpen) return null;
 
   return (
-    <div className="fixed inset-0 bg-black/90 z-50 flex items-center justify-center p-4">
+    <div className="sticky inset-0 bg-black/90 z-50 flex items-center justify-center p-4">
       <div className="relative w-full max-w-5xl mx-auto">
         <button
           onClick={onClose}
@@ -196,7 +196,7 @@ const productData = {
 };
 
 const MandalaBackground = () => (
-  <div className="fixed inset-0 pointer-events-none">
+  <div className="sticky inset-0 pointer-events-none">
     <div className="absolute inset-0 bg-black">
       <svg className="absolute inset-0 w-full h-full opacity-30" viewBox="0 0 200 200">
         <defs>
@@ -288,7 +288,7 @@ const SubProjectDetail = ({ project, onClose }) => {
   }, []);
 
   return (
-    <div className={`fixed inset-0 bg-black/95 z-50 overflow-y-auto transition-opacity duration-500 
+    <div className={`sticky inset-0 bg-black/95 z-50 overflow-y-auto transition-opacity duration-500 
       ${isVisible ? 'opacity-100' : 'opacity-0'}`}>
       <div className="container mx-auto px-4 py-12">
         <button

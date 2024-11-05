@@ -254,8 +254,6 @@ const AboutPage = () => {
                     </div>
 
                     {/* Content */}
-
-                    {/* Content */}
                     <motion.div
                         initial={{ opacity: 0, y: 20 }}
                         animate={{ opacity: 1, y: 0 }}
@@ -371,7 +369,7 @@ const AboutPage = () => {
                                                 <motion.div variants={itemVariants}>
                                                     <p className="text-lg">
                                                         Bên cạnh các công trình mật tông, <strong style={{ color: '#B8860B' }}>Đồng mỹ nghệ VIỆT TRUNG</strong> cũng đặc biệt quan tâm và
-                                                        đẩy mạnh việc chế tác các sản phẩm phục vụ cho <stron style={{ color: '#B8860B' }}>đạo Mẫu</stron>,
+                                                        đẩy mạnh việc chế tác các sản phẩm phục vụ cho <strong style={{ color: '#B8860B' }}>đạo Mẫu</strong>,
                                                         <strong style={{ color: '#B8860B' }}>đạo Thánh</strong> và <strong style={{ color: '#B8860B' }}>Phật giáo Đại thừa</strong>.
                                                         Với tâm niệm mỗi sản phẩm đều phải mang đậm dấu ấn văn hóa truyền thống, chúng tôi luôn tập trung vào việc bảo tồn các yếu tố tâm linh
                                                         dân tộc trong từng tác phẩm.

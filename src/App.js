@@ -7,7 +7,7 @@ import About from './components/About';
 import Products from './components/Products';
 import Contact from './components/Contact';
 import MobileDevice from './components/MobileDevice';
-
+import ScrollToTop from './components/ScrollToTop';
 function App() {
   // Di chuyển useEffect vào trong component
   useEffect(() => {
@@ -46,6 +46,7 @@ function App() {
     <Router>
       <Header />
       <div className="main-content" style={{ minHeight: 'calc(var(--vh, 1vh) * 100)' }}>
+      <ScrollToTop />
         <Routes>
           <Route path="/" element={<Homepage />} />
           <Route path="/about" element={<About />} />

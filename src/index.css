@@ -66,3 +66,29 @@ code {
     height: -webkit-fill-available;
   }
 }
+.page-transition {
+  opacity: 1.8;
+  transition: opacity 1500ms ease-in-out;
+}
+
+.page-transition * {
+  transition: transform 800ms ease-out;
+}
+
+/* Optional: Add a subtle scale effect */
+.main-content > *:not(.header) {
+  transition: opacity 800ms ease-out;
+}
+
+.page-transition .main-content > *:not(.header) {
+  opacity: 0.8;
+  transition: opacity 800ms ease-in-out;
+}
+.header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 50;
+  background: #000; /* hoặc màu nền phù hợp với thiết kế của bạn */
+}

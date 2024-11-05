@@ -310,7 +310,7 @@ const Contact = () => {
                     <div id="contact-info"
                         className={`bg-white/10 backdrop-blur-md rounded-lg p-8 shadow-xl border border-white/10 animate-on-scroll transition-all duration-1000 transform hover:shadow-2xl hover:shadow-yellow-600/20 ${isVisible['contact-info'] ? 'translate-x-0 opacity-100' : '-translate-x-10 opacity-0'
                             }`}>
-                        <h2 className="font-cinzel text-3xl font-bold mb-8 text-white text-center">Thông Tin Liên Hệ</h2>
+                        <h2 className="font-quicksand text-3xl font-bold mb-8 text-white text-center">Thông Tin Liên Hệ</h2>
 
                         <div className="space-y-8">
                             {[
@@ -343,7 +343,7 @@ const Contact = () => {
                     <div id="contact-form"
                         className={`bg-white/10 backdrop-blur-lg p-8 rounded-lg shadow-xl border border-white/20 animate-on-scroll transition-all duration-1000 transform hover:shadow-2xl hover:shadow-yellow-600/20 ${isVisible['contact-form'] ? 'translate-x-0 opacity-100' : 'translate-x-10 opacity-0'
                             }`}>
-                        <h2 className="font-cinzel text-3xl font-bold mb-8 text-white text-center">Gửi Tin Nhắn</h2>
+                        <h2 className="font-quicksand text-3xl font-bold mb-8 text-white text-center">Gửi Tin Nhắn</h2>
                         <form onSubmit={handleSubmit} className="space-y-6">
                             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                                 {[
@@ -432,7 +432,7 @@ const Contact = () => {
             </div>
 
             {/* Custom Animations */}
-            <style>{`
+            <style >{`
                     @keyframes float {
                         0% { transform: translateY(0) translateX(0); }
                         50% { transform: translateY(-20px) translateX(10px); }

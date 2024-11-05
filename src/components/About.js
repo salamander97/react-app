@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from 'react';
 import { ChevronUp, ChevronRight } from 'lucide-react';
-import Header from './Header';
 import { motion, AnimatePresence } from 'framer-motion';
 
 const AboutPage = () => {
@@ -90,9 +89,6 @@ const AboutPage = () => {
                     </svg>
                 </div>
             </div>
-
-            <Header />
-
             <div className="relative z-10 pt-8">
                 {/* Enhanced Hero Section */}
                 <div className="text-center px-4 py-16 relative">

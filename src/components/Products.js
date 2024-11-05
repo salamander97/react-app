@@ -384,7 +384,6 @@ const SubProjectDetail = ({ project, onClose }) => {
   return (
     <div className="min-h-screen bg-black text-amber-500">
       <MandalaBackground />
-      <Header />
       <main className="container mx-auto px-4 py-8 min-h-[calc(100vh-80px)] relative z-10">
         <h1 className={`font-philosopher text-3xl font-bold text-center mb-12 transform transition-all duration-1000 
           ${isVisible ? 'translate-y-0 opacity-100' : 'translate-y-10 opacity-0'}`}>

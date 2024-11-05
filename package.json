@@ -2,7 +2,7 @@
   "name": "website",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://salamander97.github.io/react-app",
+  "homepage": ".",
   "dependencies": {
     "@next/font": "^14.2.15",
     "@testing-library/jest-dom": "^5.17.0",

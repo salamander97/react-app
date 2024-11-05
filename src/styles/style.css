@@ -12,14 +12,6 @@ body {
   -webkit-overflow-scrolling: touch;
 }
 
-/* Update main container */
-/* .relative.min-h-screen.bg-[#1a1a1a].overflow-x-hidden {
-  min-height: 100%;
-  /* Enable proper scrolling */
-  /* position: relative;
-  overflow-y: auto;
-  -webkit-overflow-scrolling: touch;
-} */ */
 .main-container {
   min-height: 100%;
   position: relative;

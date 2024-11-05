@@ -337,26 +337,29 @@ const AboutPage = () => {
                                             <div className="font-philosopher leading-relaxed space-y-8 text-white">
                                                 <motion.div variants={itemVariants}>
                                                     <p className="text-lg">
-                                                        Là một trong năm làng nghề chạm bạc cổ và nổi tiếng nhất Việt Nam, <strong style={{ color: '#B8860B' }}>Đồng mỹ nghệ VIỆT TRUNG</strong>
-                                                        tự hào không chỉ với bề dày lịch sử mà còn với kỹ thuật thúc đồng mỹ nghệ tinh xảo, đạt đến trình độ cao. Chúng tôi đã không ngừng cống
-                                                        hiến và nỗ lực, từ những ngày đầu thành lập với xưởng nhỏ đến nay đã trở thành một thương hiệu nổi bật, chuyên sâu vào các sản phẩm
-                                                        đồ thờ cúng, đồ phong thủy, và đặc biệt là các công trình <strong style={{ color: '#B8860B' }}>nghệ thuật mật tông</strong>.
+                                                        Làng nghề chạm bạc Đồng Xâm là một trong 13 làng nghề tiêu biểu của Quốc gia, chúng tôi tự hào là một người con của làng nghề truyền
+                                                        thống với bề dày hơn 600 năm lịch sử. <strong style={{ color: '#B8860B' }}>Đồng mỹ nghệ VIỆT TRUNG</strong>
+                                                        đã được các quý thầy và quý nhà chùa gieo duyên, chỉ dạy và truyền cảm hứng để chúng tôi mạnh dạn học hỏi và phát triển kỹ năng. Sự cổ vũ và hướng dẫn tận tâm này không chỉ giúp chúng tôi gìn giữ và phát huy nghệ thuật thúc đồng mỹ nghệ tinh xảo mà còn thúc đẩy chúng tôi đạt đến trình độ cao trong ngành. Chúng tôi đã không ngừng cống hiến và nỗ lực, từ những ngày đầu thành lập với xưởng nhỏ,
+                                                        để nay đã trở thành một điểm đến uy tín cho các sản phẩm đồ thờ cúng, đồ phong thủy, và đặc biệt là các công trình  <strong style={{ color: '#B8860B' }}>nghệ thuật mật tông</strong>.
                                                     </p>
                                                 </motion.div>
 
                                                 <motion.div variants={itemVariants}>
                                                     <p className="text-lg">
-                                                        Để đạt được vị thế như hiện tại, <strong style={{ color: '#B8860B' }}>Đồng mỹ nghệ VIỆT TRUNG</strong> luôn đặt yếu tố chất lượng và
-                                                        giá trị văn hóa truyền thống lên hàng đầu, phục vụ cho tâm linh của cộng đồng Phật tử và những ai có niềm tin vào đạo Phật.
-                                                        Một trong những điểm nhấn quan trọng mà chúng tôi luôn tự hào là khả năng thực hiện các công trình <strong style={{ color: '#B8860B' }}>
-                                                            chuyển chú, mandala </strong> – một lĩnh vực phức tạp đòi hỏi cả tay nghề cao và sự tôn kính, hiểu biết sâu sắc về tôn giáo.
+                                                        Để đạt được vị thế như hiện tại, <strong style={{ color: '#B8860B' }}>Đồng mỹ nghệ VIỆT TRUNG</strong>
+                                                        luôn đặt yếu tố chất lượng và giá trị văn hóa truyền thống lên hàng đầu, phục vụ cho tâm linh của cộng đồng Phật tử
+                                                        và những ai có niềm tin vào đạo Phật. Một trong những điểm nhấn quan trọng mà chúng tôi luôn tự hào là khả năng thực hiện
+                                                        các công trình tầm cỡ quốc gia như Chùa Bái Đính, Chùa Tam Chúc, và Đại bảo tháp Mandala Tây Thiên, cũng như các tác phẩm
+                                                        nghệ thuật mật tông như <strong style={{ color: '#B8860B' }}>chuyển chú</strong> và <strong style={{ color: '#B8860B' }}>mandala</strong>,
+                                                        đòi hỏi tay nghề cao cùng sự tôn kính và hiểu biết sâu sắc về tôn giáo.
                                                     </p>
+
                                                 </motion.div>
 
                                                 <motion.div variants={itemVariants}>
                                                     <p className="text-lg">
                                                         Chúng tôi đã mạnh dạn đầu tư vào công nghệ hiện đại, đào tạo đội ngũ thợ lành nghề và chuyên viên để đảm bảo mỗi công trình không chỉ
-                                                        là một sản phẩm mà còn là một tác phẩm nghệ thuật đầy tâm huyết. Những sản phẩm như <strong style={{ color: '#B8860B' }}>bảo tháp
+                                                        là một sản phẩm mà còn là một tác phẩm nghệ thuật đầy tâm huyết. Những sản phẩm như <strong style={{ color: '#B8860B' }}>dại bảo tháp
                                                             mandala Tây Thiên</strong> và các tác phẩm chuyển chú tinh xảo của chúng tôi là minh chứng cho những nỗ lực không ngừng nhằm
                                                         bảo tồn và phát triển văn hóa tâm linh Mật tông được du nhập vào Việt Nam.
                                                     </p>

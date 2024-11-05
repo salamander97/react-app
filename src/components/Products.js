@@ -301,7 +301,7 @@ const SubProjectDetail = ({ project, onClose }) => {
 
         <div className={`max-w-4xl mx-auto transform transition-all duration-700 delay-100
           ${isVisible ? 'translate-y-0 opacity-100' : 'translate-y-10 opacity-0'}`}>
-          <h2 className="font-philosopher font-extrabold text-3xl font-bold text-amber-500 mb-6">{project.title}</h2>
+          <h2 className="font-philosopher font-extrabold text-3xl text-amber-500 mb-6">{project.title}</h2>
 
           {/* Image Gallery with Fade In */}
           <div className="grid grid-cols-2 gap-4 mb-8">

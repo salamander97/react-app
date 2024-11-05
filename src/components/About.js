@@ -93,66 +93,167 @@ const AboutPage = () => {
 
             <Header />
 
-            <div className="relative z-10 pt-20">
+            <div className="relative z-10 pt-8">
                 {/* Enhanced Hero Section */}
                 <div className="text-center px-4 py-16 relative">
-                    {/* Decorative Frame */}
+                    {/* Decorative Frame with Buddhist Lotus */}
                     <div className="absolute inset-0 flex items-center justify-center">
-                        {/* Top Left Corner */}
-                        <div className="absolute top-0 left-0 w-24 h-24">
-                            <div className="absolute top-0 left-0 w-full h-2 bg-gradient-to-r from-[#B8860B] to-transparent"></div>
-                            <div className="absolute top-0 left-0 w-2 h-full bg-gradient-to-b from-[#B8860B] to-transparent"></div>
-                        </div>
+                        {/* Main Frame Container */}
+                        <div className="absolute inset-4 border border-[#B8860B]/30 rounded-3xl overflow-hidden">
+                            {/* Gradient Borders */}
+                            <div className="absolute inset-0">
+                                {/* Gradient borders */}
+                                <div className="absolute top-0 inset-x-0 h-1 bg-gradient-to-r from-transparent via-[#B8860B] to-transparent"></div>
+                                <div className="absolute bottom-0 inset-x-0 h-1 bg-gradient-to-r from-transparent via-[#B8860B] to-transparent"></div>
+                                <div className="absolute left-0 inset-y-0 w-1 bg-gradient-to-b from-transparent via-[#B8860B] to-transparent"></div>
+                                <div className="absolute right-0 inset-y-0 w-1 bg-gradient-to-b from-transparent via-[#B8860B] to-transparent"></div>
+                            </div>
 
-                        {/* Top Right Corner */}
-                        <div className="absolute top-0 right-0 w-24 h-24">
-                            <div className="absolute top-0 right-0 w-full h-2 bg-gradient-to-l from-[#B8860B] to-transparent"></div>
-                            <div className="absolute top-0 right-0 w-2 h-full bg-gradient-to-b from-[#B8860B] to-transparent"></div>
-                        </div>
+                            {/* Large Centered Lotus */}
+                            <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-64 h-64 opacity-20">
+                                <svg viewBox="0 0 200 200" className="w-full h-full">
+                                    {/* Center Circle */}
+                                    <circle cx="100" cy="100" r="15" fill="#B8860B" className="opacity-30" />
 
-                        {/* Bottom Left Corner */}
-                        <div className="absolute bottom-0 left-0 w-24 h-24">
-                            <div className="absolute bottom-0 left-0 w-full h-2 bg-gradient-to-r from-[#B8860B] to-transparent"></div>
-                            <div className="absolute bottom-0 left-0 w-2 h-full bg-gradient-to-t from-[#B8860B] to-transparent"></div>
-                        </div>
+                                    {/* Inner Lotus Petals */}
+                                    {[...Array(8)].map((_, i) => (
+                                        <path
+                                            key={`inner-${i}`}
+                                            d={`M100,100 Q${100 + Math.cos(i * Math.PI / 4) * 30},${100 + Math.sin(i * Math.PI / 4) * 30} 
+                               ${100 + Math.cos((i * Math.PI / 4) + Math.PI / 8) * 40},${100 + Math.sin((i * Math.PI / 4) + Math.PI / 8) * 40} 
+                               Q${100 + Math.cos((i * Math.PI / 4) + Math.PI / 4) * 30},${100 + Math.sin((i * Math.PI / 4) + Math.PI / 4) * 30} 100,100`}
+                                            fill="#B8860B"
+                                            className="opacity-40"
+                                        />
+                                    ))}
 
-                        {/* Bottom Right Corner */}
-                        <div className="absolute bottom-0 right-0 w-24 h-24">
-                            <div className="absolute bottom-0 right-0 w-full h-2 bg-gradient-to-l from-[#B8860B] to-transparent"></div>
-                            <div className="absolute bottom-0 right-0 w-2 h-full bg-gradient-to-t from-[#B8860B] to-transparent"></div>
-                        </div>
-
-                        {/* Decorative Lines */}
-                        <div className="absolute inset-x-32 top-0 h-px bg-gradient-to-r from-transparent via-[#B8860B]/50 to-transparent"></div>
-                        <div className="absolute inset-x-32 bottom-0 h-px bg-gradient-to-r from-transparent via-[#B8860B]/50 to-transparent"></div>
-                        <div className="absolute inset-y-32 left-0 w-px bg-gradient-to-b from-transparent via-[#B8860B]/50 to-transparent"></div>
-                        <div className="absolute inset-y-32 right-0 w-px bg-gradient-to-b from-transparent via-[#B8860B]/50 to-transparent"></div>
-
-                        {/* Corner Ornaments */}
-                        {[0, 90, 180, 270].map((rotate) => (
-                            <div
-                                key={rotate}
-                                className="absolute w-12 h-12"
-                                style={{
-                                    top: rotate < 180 ? '0' : 'auto',
-                                    bottom: rotate >= 180 ? '0' : 'auto',
-                                    left: rotate === 90 || rotate === 180 ? '0' : 'auto',
-                                    right: rotate === 0 || rotate === 270 ? '0' : 'auto',
-                                    transform: `rotate(${rotate}deg)`
-                                }}
-                            >
-                                <svg viewBox="0 0 50 50" className="w-full h-full">
-                                    <path
-                                        d="M50,0 Q25,0 25,25 Q25,50 0,50"
-                                        fill="none"
-                                        stroke="#B8860B"
-                                        strokeWidth="2"
-                                        className="opacity-50"
-                                    />
+                                    {/* Outer Lotus Petals */}
+                                    {[...Array(8)].map((_, i) => (
+                                        <path
+                                            key={`outer-${i}`}
+                                            d={`M100,100 Q${100 + Math.cos(i * Math.PI / 4) * 50},${100 + Math.sin(i * Math.PI / 4) * 50} 
+                               ${100 + Math.cos((i * Math.PI / 4) + Math.PI / 8) * 70},${100 + Math.sin((i * Math.PI / 4) + Math.PI / 8) * 70} 
+                               Q${100 + Math.cos((i * Math.PI / 4) + Math.PI / 4) * 50},${100 + Math.sin((i * Math.PI / 4) + Math.PI / 4) * 50} 100,100`}
+                                            fill="#B8860B"
+                                            className="opacity-90"
+                                        />
+                                    ))}
                                 </svg>
                             </div>
-                        ))}
+
+                            {/* Corner Lotus Decorations */}
+                            {[
+                                { position: 'top-0 left-0', rotate: '0' },
+                                { position: 'top-0 right-0', rotate: '90' },
+                                { position: 'bottom-0 right-0', rotate: '180' },
+                                { position: 'bottom-0 left-0', rotate: '270' }
+                            ].map((corner, index) => (
+                                <div
+                                    key={index}
+                                    className={`absolute ${corner.position} w-32 h-32`}
+                                    style={{ transform: `rotate(${corner.rotate}deg)` }}
+                                >
+                                    <svg viewBox="0 0 100 100" className="w-full h-full">
+                                        {/* Corner Lotus */}
+                                        {[...Array(5)].map((_, i) => (
+                                            <path
+                                                key={`petal-${i}`}
+                                                d={`M0,0 Q20,20 40,0 Q20,-20 0,0`}
+                                                fill="none"
+                                                stroke="#B8860B"
+                                                strokeWidth="1"
+                                                className="opacity-50"
+                                                transform={`translate(20, 20) rotate(${i * 45})`}
+                                            />
+                                        ))}
+                                        {/* Lotus Stem */}
+                                        <path
+                                            d="M0,40 C20,40 40,20 40,0"
+                                            fill="none"
+                                            stroke="#B8860B"
+                                            strokeWidth="1"
+                                            className="opacity-70"
+                                        />
+                                        {/* Lotus Leaves */}
+                                        <path
+                                            d="M10,35 Q25,25 40,35 Q25,45 10,35"
+                                            fill="#B8860B"
+                                            className="opacity-30"
+                                        />
+                                    </svg>
+                                </div>
+                            ))}
+
+                            {/* Side Lotus Decorations */}
+                            {[...Array(1)].map((_, i) => (
+                                <div
+                                    key={i}
+                                    className="absolute"
+                                    style={{
+                                        top: i < 2 ? '50%' : (i === 2 ? '0' : '100%'),
+                                        left: i % 2 === 0 ? '50%' : (i === 1 ? '0' : '100%'),
+                                        transform: 'translate(-50%, -50%)'
+                                    }}
+                                >
+                                    <svg viewBox="0 0 60 60" className="w-16 h-16">
+                                        {/* Small Lotus Flower */}
+                                        {[...Array(16)].map((_, j) => (
+                                            <path
+                                                key={j}
+                                                d={`M30,30 Q${30 + Math.cos(j * Math.PI / 4) * 15},${30 + Math.sin(j * Math.PI / 4) * 15} 
+                                   ${30 + Math.cos((j * Math.PI / 4) + Math.PI / 8) * 20},${30 + Math.sin((j * Math.PI / 4) + Math.PI / 8) * 20} 
+                                   Q${30 + Math.cos((j * Math.PI / 4) + Math.PI / 4) * 15},${30 + Math.sin((j * Math.PI / 4) + Math.PI / 4) * 15} 30,30`}
+                                                fill="#B8860B"
+                                                className="opacity-20"
+                                            />
+                                        ))}
+                                    </svg>
+                                </div>
+                            ))}
+
+                            {/* Connecting Patterns */}
+                            <div className="absolute inset-0">
+                                {[...Array(4)].map((_, i) => (
+                                    <div
+                                        key={i}
+                                        className="absolute"
+                                        style={{
+                                            top: i < 2 ? '0' : 'auto',
+                                            bottom: i >= 2 ? '0' : 'auto',
+                                            left: i % 2 === 0 ? '0' : 'auto',
+                                            right: i % 2 === 1 ? '0' : 'auto',
+                                            width: '40%',
+                                            height: '40%'
+                                        }}
+                                    >
+                                        <svg viewBox="0 0 100 100" className="w-full h-full">
+                                            <path
+                                                d={`M${i % 2 === 0 ? '0' : '100'},${i < 2 ? '0' : '100'} 
+                                   Q50,50 ${i % 2 === 0 ? '100' : '0'},${i < 2 ? '100' : '0'}`}
+                                                fill="none"
+                                                stroke="#B8860B"
+                                                strokeWidth="1"
+                                                className="opacity-10"
+                                            />
+                                            {/* Small decorative dots */}
+                                            {[...Array(5)].map((_, j) => (
+                                                <circle
+                                                    key={j}
+                                                    cx={i % 2 === 0 ? j * 25 : 100 - j * 10}
+                                                    cy={i < 2 ? j * 25 : 100 - j * 25}
+                                                    r="1"
+                                                    fill="#B8860B"
+                                                    className="opacity-90"
+                                                />
+                                            ))}
+                                        </svg>
+                                    </div>
+                                ))}
+                            </div>
+                        </div>
                     </div>
+
+                    {/* Content */}
 
                     {/* Content */}
                     <motion.div

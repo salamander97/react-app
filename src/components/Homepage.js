@@ -8,7 +8,7 @@ import chuaBaiDinh from '../assets/images/congtrinhthicong/chuabaidinh.jpeg';
 import mandalaTayThien from '../assets/images/congtrinhthicong/mandalaTayThien.jpg';
 import chuaTamChuc from '../assets/images/congtrinhthicong/chuatamchuc.jpeg';
 import fansipan from '../assets/images/congtrinhthicong/tuongphatfansipan.jpg';
-import xuongducdong from '../assets/images/congtrinhthicong/xuongthucdong.webp';
+import xuongducdong from '../assets/images/congtrinhthicong/20220523_150304.jpg';
 import homeNghenhanngoilam from '../assets/images/congtrinhthicong/home-nghenhanngoilam.jpeg';
 
 // Section Divider Component
@@ -63,81 +63,185 @@ const HomePage = () => {
   };
 
   return (
-    <div className="relative min-h-screen bg-[#1a1a1a]">
-      {/* Single Mandala Pattern Background */}
-      <div className="sticky inset-0 pointer-events-none">
+    <div className="relative min-h-screen bg-[#1a1a1a] ">
+      <div className="fixed inset-0 pointer-events-none overflow-hidden">
+        {/* Light Particles */}
+        {[...Array(20)].map((_, i) => (
+          <div
+            key={i}
+            className="absolute w-2 h-2 bg-yellow-500/20 rounded-full"
+            style={{
+              top: `${Math.random() * 100}%`,
+              left: `${Math.random() * 100}%`,
+              animation: `float ${5 + Math.random() * 10}s linear infinite`,
+              animationDelay: `${Math.random() * 5}s`
+            }}
+          />
+        ))}
+
+        {/* Enhanced Mandala Pattern */}
         <div className="absolute inset-0 bg-black/40">
           <svg className="absolute inset-0 w-full h-full opacity-30" viewBox="0 0 200 200">
             <defs>
-              <filter id="shadow">
-                <feDropShadow dx="0" dy="0" stdDeviation="4" floodColor="#B8860B" floodOpacity="0.5" />
+              <filter id="glow">
+                <feGaussianBlur stdDeviation="2" result="coloredBlur" />
+                <feMerge>
+                  <feMergeNode in="coloredBlur" />
+                  <feMergeNode in="SourceGraphic" />
+                </feMerge>
               </filter>
+              <linearGradient id="golden-gradient" x1="0%" y1="0%" x2="100%" y2="100%">
+                <stop offset="0%" stopColor="#B8860B" />
+                <stop offset="100%" stopColor="#FFD700" />
+              </linearGradient>
             </defs>
 
-            {/* Single centered mandala */}
             {[0, 45, 90, 135, 180, 225, 270, 315].map((angle) => (
               <g key={angle} transform={`rotate(${angle} 100 100)`}>
                 <path
                   d="M100,60 Q120,80 100,100 Q80,80 100,60"
                   fill="none"
-                  stroke="#B8860B"
+                  stroke="url(#golden-gradient)"
                   strokeWidth="1"
-                  filter="url(#shadow)"
+                  filter="url(#glow)"
+                  className="animate-pulse-slow"
                 />
                 <path
                   d="M100,40 Q130,70 100,100 Q70,70 100,40"
                   fill="none"
-                  stroke="#B8860B"
+                  stroke="url(#golden-gradient)"
                   strokeWidth="1"
-                  filter="url(#shadow)"
+                  filter="url(#glow)"
+                  className="animate-pulse-slow"
                 />
               </g>
             ))}
           </svg>
         </div>
       </div>
-
-      {/* Content */}
-      <div className="relative">
-        {/* Stylized Hero Section */}
-        <div className="relative w-full overflow-hidden flex items-center justify-center py-10 md:py-20 px-4">
-          {/* Decorative Frame with Buddhist elements */}
+      <div className="relative z-10 pt-2">
+        {/* Enhanced Hero Section */}
+        <div className="text-center px-4 py-16 relative">
+          {/* Decorative Frame with Buddhist Lotus */}
           <div className="absolute inset-0 flex items-center justify-center">
-            {/* Decorative Border Lines with Buddhist Pattern */}
-            <div className="ke-ngang absolute inset-x-4 md:inset-x-40 bottom-0 h-[2px] bg-gradient-to-r from-transparent via-[#B8860B] to-transparent">
+            {/* Main Frame Container */}
+            <div className="absolute inset-4 border border-[#fadf9c]/30 rounded-3xl overflow-hidden">
+              {/* Gradient Borders */}
+              <div className="absolute inset-0">
+                {/* Gradient borders */}
+                <div className="absolute top-0 inset-x-0 h-1 bg-gradient-to-r from-transparent via-[#fadf9c] to-transparent"></div>
+                <div className="absolute bottom-0 inset-x-0 h-1 bg-gradient-to-r from-transparent via-[#fadf9c] to-transparent"></div>
+                <div className="absolute left-0 inset-y-0 w-1 bg-gradient-to-b from-transparent via-[#fadf9c] to-transparent"></div>
+                <div className="absolute right-0 inset-y-0 w-1 bg-gradient-to-b from-transparent via-[#fadf9c] to-transparent"></div>
+              </div>
+              {/* Corner Lotus Decorations */}
+              {[
+                { position: 'top-0 left-0', rotate: '0' },
+                { position: 'top-0 right-0', rotate: '90' },
+                { position: 'bottom-0 right-0', rotate: '180' },
+                { position: 'bottom-0 left-0', rotate: '270' }
+              ].map((corner, index) => (
+                <div
+                  key={index}
+                  className={`absolute ${corner.position} w-32 h-32`}
+                  style={{ transform: `rotate(${corner.rotate}deg)` }}
+                >
+                  <svg viewBox="0 0 100 100" className="w-full h-full">
+                    {/* Corner Lotus */}
+                    {[...Array(5)].map((_, i) => (
+                      <path
+                        key={`petal-${i}`}
+                        d={`M0,0 Q20,20 40,0 Q20,-20 0,0`}
+                        fill="none"
+                        stroke="#dec27d"
+                        strokeWidth="1"
+                        className="opacity-50"
+                        transform={`translate(20, 20) rotate(${i * 45})`}
+                      />
+                    ))}
+                    {/* Lotus Stem */}
+                    <path
+                      d="M0,40 C20,40 40,20 40,0"
+                      fill="none"
+                      stroke="#dec27d"
+                      strokeWidth="1"
+                      className="opacity-90"
+                    />
+                    {/* Lotus Leaves */}
+                    <path
+                      d="M10,35 Q25,25 40,35 Q25,45 10,35"
+                      fill="#dec27d"
+                      className="opacity-30"
+                    />
+                  </svg>
+                </div>
+              ))}
+
+              {/* Side Lotus Decorations */}
+              {/* Connecting Patterns */}
+              <div className="absolute inset-0">
+                {[...Array(4)].map((_, i) => (
+                  <div
+                    key={i}
+                    className="absolute"
+                    style={{
+                      top: i < 2 ? '0' : 'auto',
+                      bottom: i >= 2 ? '0' : 'auto',
+                      left: i % 2 === 0 ? '0' : 'auto',
+                      right: i % 2 === 1 ? '0' : 'auto',
+                      width: '40%',
+                      height: '40%'
+                    }}
+                  >
+                    <svg viewBox="0 0 100 100" className="w-full h-full">
+                      {/* Small decorative dots */}
+                      {[...Array(20)].map((_, j) => (
+                        <circle
+                          key={j}
+                          cx={i % 2 === 0 ? j * 25 : 100 - j * 10}
+                          cy={i < 2 ? j * 25 : 100 - j * 25}
+                          r="1"
+                          fill="#f0e5c9"
+                          className="opacity-50"
+                        />
+                      ))}
+                    </svg>
+                  </div>
+                ))}
+              </div>
             </div>
           </div>
-
-          {/* Content */}
-          <div className="relative z-20 text-center px-4 w-full max-w-7xl mx-auto">
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8 }}
-            >
-              <h1 className="font-philosopher text-4xl md:text-6xl lg:text-7xl font-bold mb-6 relative">
-                <span className="relative inline-block px-12 bg-gradient-to-r from-[#B8860B] via-[#FFD700] to-[#B8860B] bg-clip-text text-transparent">
-                  Công Trình Phật Giáo
-                </span>
-              </h1>
-              <h2 className="font-cormorant text-xl md:text-3xl text-[#B8860B] font-semibold mb-8 tracking-[0.2em] relative">
+          {/* Liên hệ với chúng tôi */}
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8 }}
+            className="relative max-w-4xl mx-auto"
+          >
+            <h1 className="font-philosopher text-4xl md:text-6xl lg:text-7xl font-bold mb-6 relative">
+              <span className="relative inline-block px-12 bg-gradient-to-r from-[#B8860B] via-[#FFD700] to-[#B8860B] bg-clip-text text-transparent">
+                Công Trình Phật Giáo
+              </span>
+            <span className="block w-8 h-px bg-gradient-to-r from-transparent to-[#D4AF37]"></span>
+            <span className="block w-8 h-px bg-gradient-to-l from-transparent to-[#D4AF37]"></span>
+            </h1>
+            <h2 className="font-cormorant text-xl md:text-3xl text-[#B8860B] font-semibold mb-8 tracking-[0.2em] relative">
                 <span className="relative inline-block px-12 bg-gradient-to-r from-[#B8860B] via-[#FFD700] to-[#B8860B] bg-clip-text text-transparent">
                   CHUYỂN CHÚ MẬT TÔNG & NGHỆ THUẬT TÂM LINH
                 </span>
                 <div className="absolute -bottom-2 left-1/2 transform -translate-x-1/2 w-24 h-px bg-gradient-to-r from-transparent via-[#B8860B] to-transparent"></div>
               </h2>
-              <p className="font-quicksand text-base md:text-xl mb-12 max-w-3xl mx-auto leading-relaxed bg-clip-text text-transparent bg-gradient-to-r from-yellow-300 via-yellow-500 to-yellow-300">
-                Chuyên tạo tác các công trình Phật giáo quy mô lớn, thúc tượng Phật, chế tác Mandala và các tác phẩm chuyển chú Mật tông
+              <p className="font-cormorant text-base md:text-xl mb-12 max-w-3xl mx-auto leading-relaxed bg-clip-text text-transparent bg-gradient-to-r from-yellow-300 via-yellow-500 to-yellow-300 p-2">
+                <strong>Chuyên tạo tác các công trình Phật giáo quy mô lớn, thúc tượng Phật, chế tác Mandala và các tác phẩm chuyển chú Mật tông</strong>
               </p>
-
-              <motion.div
+                <motion.div
                 className="flex flex-col sm:flex-row gap-4 sm:gap-6 justify-center items-center"
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: 0.3, duration: 0.8 }}
               >
                 <Link to="/products">
-                  <button className="font-cormorant px-6 py-3 md:px-8 md:py-4 bg-[#B8860B] hover:bg-[#986D0A] text-white rounded-lg transition-all duration-300 text-lg tracking-widest uppercase font-semibold hover:scale-105">
+                  <button className="font-cormorant font-bold px-6 py-3 md:px-8 md:py-4 bg-[#B8860B] hover:bg-[#986D0A] text-white rounded-lg transition-all duration-300 text-lg tracking-widest uppercase font-semibold hover:scale-105">
                     Khám Phá Công Trình
                   </button>
                 </Link>
@@ -147,9 +251,13 @@ const HomePage = () => {
                   </button>
                 </Link>
               </motion.div>
-            </motion.div>
-          </div>
+          </motion.div>
         </div>
+      </div>
+      {/* Content */}
+      <div className="relative">
+        {/* Stylized Hero Section */}
+
 
         {/* Về Chúng Tôi Section */}
         <section className="relative py-12 md:py-24 px-4 w-full">
@@ -174,8 +282,8 @@ const HomePage = () => {
                 >
                   <div className="relative h-[400px]">
                     <img
-                      src={xuongducdong}
-                      alt="Xưởng thúc đồng"
+                      src={homeNghenhanngoilam}
+                      alt="Nghệ nhân làm việc"
                       className="w-full h-full object-cover"
                     />
                     <div className="absolute inset-0 bg-gradient-to-r from-[#B8860B]/20 to-black/40" />
@@ -187,8 +295,8 @@ const HomePage = () => {
                     transition={{ delay: 0.3 }}
                   >
                     <img
-                      src={homeNghenhanngoilam}
-                      alt="Nghệ nhân làm việc"
+                      src={xuongducdong}
+                      alt="Xưởng thúc đồng"
                       className="w-full h-full object-cover"
                     />
                   </motion.div>

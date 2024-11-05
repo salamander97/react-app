@@ -66,7 +66,7 @@ const Contact = () => {
 
     // Background Mandala Component
     return (
-        <div className="relative min-h-screen w-full bg-gradient-to-b from-gray-900 via-gray-800 to-gray-900">
+        <div className="relative min-h-screen w-full overflow-x-hidden bg-gradient-to-b from-gray-900 via-gray-800 to-gray-900">
             {/* Animated Background */}
             <div className="fixed inset-0 pointer-events-none overflow-hidden">
                 {/* Light Particles */}
@@ -124,8 +124,8 @@ const Contact = () => {
                 </div>
             </div>
 
-            {/* Content Container */}
-            <div className="relative z-10 pt-8">
+            {/* Phần liên hệ Head */}
+            <div className="relative z-10 pt-2">
                 {/* Enhanced Hero Section */}
                 <div className="text-center px-4 py-16 relative">
                     {/* Decorative Frame with Buddhist Lotus */}
@@ -276,9 +276,7 @@ const Contact = () => {
                             </div>
                         </div>
                     </div>
-
-
-                    {/* Content */}
+                    {/* Liên hệ với chúng tôi */}
                     <motion.div
                         initial={{ opacity: 0, y: 20 }}
                         animate={{ opacity: 1, y: 0 }}
@@ -303,8 +301,6 @@ const Contact = () => {
 
             <div className="container mx-auto py-5 px-3 relative z-10">
                 {/* Section Title */}
-
-
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
                     {/* Contact Information */}
                     <div id="contact-info"

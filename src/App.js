@@ -8,6 +8,7 @@ import Products from './components/Products';
 import Contact from './components/Contact';
 import MobileDevice from './components/MobileDevice';
 import ScrollToTop from './components/ScrollToTop';
+import ContactButton from './components/ContactButton'
 function App() {
   // Di chuyển useEffect vào trong component
   useEffect(() => {
@@ -42,18 +43,24 @@ function App() {
 
   MobileDevice();
 
+
+  MobileDevice();
+
   return (
     <Router>
-      <Header />
-      <div className="main-content" style={{ minHeight: 'calc(var(--vh, 1vh) * 100)' }}>
-      <ScrollToTop />
-        <Routes>
-          <Route path="/" element={<Homepage />} />
-          <Route path="/about" element={<About />} />
-          <Route path="/products" element={<Products />} />
-          <Route path="/products/:id" element={<Products />} />
-          <Route path="/contact" element={<Contact />} />
-        </Routes>
+      <div className="flex flex-col min-h-screen bg-[#1a1a1a]">
+        <Header />
+        <ContactButton /> 
+        <ScrollToTop />
+        <main className="flex-1 relative">
+          <Routes>
+            <Route path="/" element={<Homepage />} />
+            <Route path="/about" element={<About />} />
+            <Route path="/products" element={<Products />} />
+            <Route path="/products/:id" element={<Products />} />
+            <Route path="/contact" element={<Contact />} />
+          </Routes>
+        </main>
       </div>
     </Router>
   );

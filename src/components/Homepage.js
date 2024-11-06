@@ -11,7 +11,7 @@ import chuaTamChuc from '../assets/images/congtrinhthicong/chuatamchuc.jpeg';
 import chuaVangBac from '../assets/images/congtrinhthicong/chuavangchuabac.png';
 import xuongducdong from '../assets/images/congtrinhthicong/20220523_150304.jpg';
 import homeNghenhanngoilam from '../assets/images/congtrinhthicong/home-nghenhanngoilam.jpeg';
-
+import chuyenKinhLuan from '../assets/images/congtrinhthicong/chuyenkinhluan1.jpg'
 // Section Divider Component
 const fadeInUp = {
   hidden: { opacity: 0, y: 20 },
@@ -62,6 +62,7 @@ const HomePage = () => {
     { id: 2, title: "Đại bảo tháp Mandala", description: "Các công trình đại bảo tháp", image: mandalaTayThien },
     { id: 3, title: "Chùa Tam Chúc", description: "Các công trình chùa Tam Chúc", image: chuaTamChuc },
     { id: 4, title: "Chùa vàng chùa bạc", description: "Chùa vàng chùa bạc Tràng An", image: chuaVangBac },
+    { id: 5, title: "Chuyển kinh luân", description: "Chuyển kinh luân bằng đồng", image: chuyenKinhLuan},
   ];
 
   const settings = {

@@ -506,6 +506,65 @@ const ProductDetail = ({ product }) => {
         </div>
       </div>
 
+        <div className={`grid grid-cols-1 md:grid-cols-2 gap-12 mt-12 transform transition-all duration-1000
+            ${isVisible ? 'translate-y-0 opacity-100' : 'translate-y-10 opacity-0'}`}
+          style={{ transitionDelay: '400ms' }}>
+          <div className="space-y-6">
+            <div className="backdrop-blur-sm bg-amber-900/20 p-6 rounded-lg border border-amber-500/30 
+                hover:border-amber-500 hover:shadow-lg hover:shadow-amber-500/20 transition-all duration-300">
+              <h2 className="font-quicksand font-extrabold text-2xl text-amber-500 mb-4">Chi tiết công trình</h2>
+              <div className="text-amber-200 space-y-6">
+                {Object.entries(product.details).map(([title, content]) => (
+                  <div key={title} className="space-y-2">
+                    <h3 className="font-quicksand font-bold text-xl text-amber-400">{title}</h3>
+                    <p className="leading-relaxed">{content.description}</p>
+                  </div>
+                ))}
+              </div>
+            </div>
+        
+            {product.features && (
+              <div className="backdrop-blur-sm bg-amber-900/20 p-6 rounded-lg border border-amber-500/30
+                  hover:border-amber-500 hover:shadow-lg hover:shadow-amber-500/20 transition-all duration-300">
+                <h2 className="font-quicksand font-extrabold text-2xl text-amber-500 mb-4">Đặc điểm nổi bật</h2>
+                <div className="space-y-4">
+                  {product.features.map((feature, index) => (
+                    <div 
+                      key={index} 
+                      className="transform hover:translate-x-2 transition-transform duration-300"
+                    >
+                      <h3 className="font-quicksand font-bold text-amber-400 flex items-center space-x-2">
+                        <span className="w-2 h-2 bg-amber-500 rounded-full" />
+                        <span>{feature.name}</span>
+                      </h3>
+                      <p className="text-amber-200 mt-1 ml-4">{feature.description}</p>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            )}
+          </div>
+        {/* Bỏ hình ảnh công trình đi */}
+          {/* <div className="backdrop-blur-sm bg-amber-900/20 p-6 rounded-lg border border-amber-500/30
+              hover:border-amber-500 hover:shadow-lg hover:shadow-amber-500/20 transition-all duration-300">
+            <h2 className="font-quicksand font-extrabold text-2xl text-amber-500 mb-4">Hình ảnh công trình</h2>
+            <div className="grid grid-cols-2 gap-4">
+              {[1, 2, 3, 4].map((num) => (
+                <div key={num} className="aspect-square overflow-hidden rounded-lg group">
+                  <img
+                    src={product.image}
+                    alt={`${product.title} ${num}`}
+                    className="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-500 cursor-pointer"
+                    onClick={() => setSelectedImage({
+                      src: product.image,
+                      title: `${product.title} - Hình ${num}`
+                    })}
+                  />
+                </div>
+              ))}
+            </div>
+          </div> */}
+        </div>
       {/* Sub Projects Section */}
       {product.subProjects && (
         <div className={`mt-16 transform transition-all duration-1000 
@@ -527,55 +586,7 @@ const ProductDetail = ({ product }) => {
         </div>
       )}
 
-      {/* Details Section */}
-      <div className={`grid grid-cols-1 md:grid-cols-2 gap-12 mt-12 transform transition-all duration-1000
-          ${isVisible ? 'translate-y-0 opacity-100' : 'translate-y-10 opacity-0'}`}
-        style={{ transitionDelay: '400ms' }}>
-        <div className="space-y-6">
-          <div className="backdrop-blur-sm bg-amber-900/20 p-6 rounded-lg border border-amber-500/30 
-              hover:border-amber-500 hover:shadow-lg hover:shadow-amber-500/20 transition-all duration-300">
-            <h2 className="font-quicksand font-extrabold text-2xl text-amber-500 mb-4">Chi tiết công trình</h2>
-            <p className="text-amber-200 leading-relaxed">
-              {product.details}
-            </p>
-          </div>
-
-          {product.features && (
-            <div className="backdrop-blur-sm bg-amber-900/20 p-6 rounded-lg border border-amber-500/30
-                hover:border-amber-500 hover:shadow-lg hover:shadow-amber-500/20 transition-all duration-300">
-              <h2 className="font-quicksand font-extrabold text-2xl text-amber-500 mb-4">Đặc điểm nổi bật</h2>
-              <ul className="font-quicksand font-extrabold text-amber-200 space-y-2">
-                {product.features.map((feature, index) => (
-                  <li key={index} className="flex items-center space-x-2 transform hover:translate-x-2 transition-transform duration-300">
-                    <span className="w-2 h-2 bg-amber-500 rounded-full" />
-                    <span>{feature}</span>
-                  </li>
-                ))}
-              </ul>
-            </div>
-          )}
-        </div>
-
-        <div className="backdrop-blur-sm bg-amber-900/20 p-6 rounded-lg border border-amber-500/30
-            hover:border-amber-500 hover:shadow-lg hover:shadow-amber-500/20 transition-all duration-300">
-          <h2 className="font-quicksand font-extrabold text-2xl text-amber-500 mb-4">Hình ảnh công trình</h2>
-          <div className="grid grid-cols-2 gap-4">
-            {[1, 2, 3, 4].map((num) => (
-              <div key={num} className="aspect-square overflow-hidden rounded-lg group">
-                <img
-                  src={product.image}
-                  alt={`${product.title} ${num}`}
-                  className="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-500 cursor-pointer"
-                  onClick={() => setSelectedImage({
-                    src: product.image,
-                    title: `${product.title} - Hình ${num}`
-                  })}
-                />
-              </div>
-            ))}
-          </div>
-        </div>
-      </div>
+{/* Details Section */}
 
       {/* Related Projects */}
       <div className={`mt-16 transform transition-all duration-1000 

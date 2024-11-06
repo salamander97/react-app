@@ -7,7 +7,7 @@ import { motion } from 'framer-motion';
 import chuaBaiDinh from '../assets/images/congtrinhthicong/chuabaidinh.jpeg';
 import mandalaTayThien from '../assets/images/congtrinhthicong/mandalaTayThien.jpg';
 import chuaTamChuc from '../assets/images/congtrinhthicong/chuatamchuc.jpeg';
-import fansipan from '../assets/images/congtrinhthicong/tuongphatfansipan.jpg';
+import chuaVangBac from '../assets/images/congtrinhthicong/chuavangchuabac.png';
 import xuongducdong from '../assets/images/congtrinhthicong/20220523_150304.jpg';
 import homeNghenhanngoilam from '../assets/images/congtrinhthicong/home-nghenhanngoilam.jpeg';
 
@@ -44,7 +44,7 @@ const HomePage = () => {
     { id: 1, title: "Chùa Bái Đính", description: "Các công trình chùa Bái Đính", image: chuaBaiDinh },
     { id: 2, title: "Đại bảo tháp Mandala", description: "Các công trình đại bảo tháp", image: mandalaTayThien },
     { id: 3, title: "Chùa Tam Chúc", description: "Các công trình chùa Tam Chúc", image: chuaTamChuc },
-    { id: 4, title: "Tượng Phật đỉnh Fansipan", description: "Tượng Phật trên đỉnh Fansipan", image: fansipan },
+    { id: 4, title: "Chùa vàng chùa bạc", description: "Chùa vàng chùa bạc Tràng An", image: chuaVangBac },
   ];
 
   const settings = {

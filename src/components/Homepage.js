@@ -2,6 +2,7 @@ import React from 'react';
 import Slider from 'react-slick';
 import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
+import { ChevronLeft, ChevronRight } from 'lucide-react';
 
 // Images
 import chuaBaiDinh from '../assets/images/congtrinhthicong/chuabaidinh.jpeg';
@@ -20,7 +21,23 @@ const fadeInUp = {
     transition: { duration: 0.6 }
   }
 };
+const CustomPrevArrow = ({ onClick }) => (
+  <button
+    onClick={onClick}
+    className="absolute left-0 top-1/2 -translate-y-1/2 -translate-x-4 z-10 w-12 h-12 flex items-center justify-center rounded-full bg-[#B8860B] hover:bg-[#FFD700] transition-colors duration-300 group"
+  >
+    <ChevronLeft className="w-8 h-8 text-white group-hover:text-gray-800" />
+  </button>
+);
 
+const CustomNextArrow = ({ onClick }) => (
+  <button
+    onClick={onClick}
+    className="absolute right-0 top-1/2 -translate-y-1/2 translate-x-4 z-10 w-12 h-12 flex items-center justify-center rounded-full bg-[#B8860B] hover:bg-[#FFD700] transition-colors duration-300 group"
+  >
+    <ChevronRight className="w-8 h-8 text-white group-hover:text-gray-800" />
+  </button>
+);
 const staggerContainer = {
   hidden: { opacity: 0 },
   visible: {
@@ -56,9 +73,11 @@ const HomePage = () => {
     autoplay: true,
     autoplaySpeed: 2000,
     cssEase: "linear",
+    prevArrow: <CustomPrevArrow />,
+    nextArrow: <CustomNextArrow />,
     responsive: [
-      { breakpoint: 1024, settings: { slidesToShow: 2, slidesToScroll: 2 } },
-      { breakpoint: 600, settings: { slidesToShow: 1, slidesToScroll: 1 } },
+      { breakpoint: 1280, settings: { slidesToShow: 2, slidesToScroll: 2 } },
+      { breakpoint: 768, settings: { slidesToShow: 1, slidesToScroll: 1 } },
     ],
   };
 
@@ -211,7 +230,6 @@ const HomePage = () => {
               </div>
             </div>
           </div>
-          {/* Liên hệ với chúng tôi */}
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
@@ -222,35 +240,35 @@ const HomePage = () => {
               <span className="relative inline-block px-12 bg-gradient-to-r from-[#B8860B] via-[#FFD700] to-[#B8860B] bg-clip-text text-transparent">
                 Công Trình Phật Giáo
               </span>
-            <span className="block w-8 h-px bg-gradient-to-r from-transparent to-[#D4AF37]"></span>
-            <span className="block w-8 h-px bg-gradient-to-l from-transparent to-[#D4AF37]"></span>
+              <span className="block w-8 h-px bg-gradient-to-r from-transparent to-[#D4AF37]"></span>
+              <span className="block w-8 h-px bg-gradient-to-l from-transparent to-[#D4AF37]"></span>
             </h1>
             <h2 className="font-cormorant text-xl md:text-3xl text-[#B8860B] font-semibold mb-8 tracking-[0.2em] relative">
-                <span className="relative inline-block px-12 bg-gradient-to-r from-[#B8860B] via-[#FFD700] to-[#B8860B] bg-clip-text text-transparent">
-                  CHUYỂN CHÚ MẬT TÔNG & NGHỆ THUẬT TÂM LINH
-                </span>
-                <div className="absolute -bottom-2 left-1/2 transform -translate-x-1/2 w-24 h-px bg-gradient-to-r from-transparent via-[#B8860B] to-transparent"></div>
-              </h2>
-              <p className="font-cormorant text-base md:text-xl mb-12 max-w-3xl mx-auto leading-relaxed bg-clip-text text-transparent bg-gradient-to-r from-yellow-300 via-yellow-500 to-yellow-300 p-2">
-                <strong>Chuyên tạo tác các công trình Phật giáo quy mô lớn, thúc tượng Phật, chế tác Mandala và các tác phẩm chuyển chú Mật tông</strong>
-              </p>
-                <motion.div
-                className="flex flex-col sm:flex-row gap-4 sm:gap-6 justify-center items-center"
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ delay: 0.3, duration: 0.8 }}
-              >
-                <Link to="/products">
-                  <button className="font-cormorant font-bold px-6 py-3 md:px-8 md:py-4 bg-[#B8860B] hover:bg-[#986D0A] text-white rounded-lg transition-all duration-300 text-lg tracking-widest uppercase font-semibold hover:scale-105">
-                    Khám Phá Công Trình
-                  </button>
-                </Link>
-                <Link to="/contact">
-                  <button className="font-cormorant px-6 py-3 md:px-8 md:py-4 border-2 border-[#B8860B] hover:border-[#f9f9f9] text-white hover:text-yellow-400 rounded-lg transition-all duration-300 text-lg tracking-widest uppercase font-semibold hover:scale-105">
-                    Tư Vấn Dự Án
-                  </button>
-                </Link>
-              </motion.div>
+              <span className="relative inline-block px-12 bg-gradient-to-r from-[#B8860B] via-[#FFD700] to-[#B8860B] bg-clip-text text-transparent">
+                CHUYỂN CHÚ MẬT TÔNG & NGHỆ THUẬT TÂM LINH
+              </span>
+              <div className="absolute -bottom-2 left-1/2 transform -translate-x-1/2 w-24 h-px bg-gradient-to-r from-transparent via-[#B8860B] to-transparent"></div>
+            </h2>
+            <p className="font-cormorant text-base md:text-xl mb-12 max-w-3xl mx-auto leading-relaxed bg-clip-text text-transparent bg-gradient-to-r from-yellow-300 via-yellow-500 to-yellow-300 p-2">
+              <strong>Chuyên tạo tác các công trình Phật giáo quy mô lớn, thúc tượng Phật, chế tác Mandala và các tác phẩm chuyển chú Mật tông</strong>
+            </p>
+            <motion.div
+              className="flex flex-col sm:flex-row gap-4 sm:gap-6 justify-center items-center"
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ delay: 0.3, duration: 0.8 }}
+            >
+              <Link to="/products">
+                <button className="font-cormorant font-bold px-6 py-3 md:px-8 md:py-4 bg-[#B8860B] hover:bg-[#986D0A] text-white rounded-lg transition-all duration-300 text-lg tracking-widest uppercase font-semibold hover:scale-105">
+                  Khám Phá Công Trình
+                </button>
+              </Link>
+              <Link to="/contact">
+                <button className="font-cormorant px-6 py-3 md:px-8 md:py-4 border-2 border-[#B8860B] hover:border-[#f9f9f9] text-white hover:text-yellow-400 rounded-lg transition-all duration-300 text-lg tracking-widest uppercase font-semibold hover:scale-105">
+                  Tư Vấn Dự Án
+                </button>
+              </Link>
+            </motion.div>
           </motion.div>
         </div>
       </div>
@@ -375,24 +393,26 @@ const HomePage = () => {
 
         {/* Công trình tiêu biểu Section */}
         <section className="py-12 md:py-24 px-4 w-full">
-          <div className="absolute inset-x-4 md:inset-x-40 bottom-0 h-[2px] bg-gradient-to-r from-transparent via-[#B8860B] to-transparent"></div>
+          <div className="absolute inset-x-2 md:inset-x-40 bottom-0 h-[2px] bg-gradient-to-r from-transparent via-[#B8860B] to-transparent"></div>
           <motion.div
-            className="max-w-7xl mx-auto"
+            className="max-w-7xl mx-auto relative"
             initial="hidden"
             whileInView="visible"
             viewport={{ once: true, amount: 0.3 }}
             variants={staggerContainer}
           >
             <motion.h2
-              // Điều chỉnh lại thứ tự responsive và kích thước font
               className="font-philosopher text-2xl sm:text-3xl md:text-4xl font-bold text-white mb-6 text-center"
               variants={fadeInUp}
             >
-              <span className="relative inline-block px-4 sm:px-8 md:px-12 bg-gradient-to-r from-[#B8860B] via-[#FFD700] to-[#B8860B] bg-clip-text text-transparent">
+              <span className="relative inline-block px-4 sm:px-2 md:px-12 bg-gradient-to-r from-[#B8860B] via-[#FFD700] to-[#B8860B] bg-clip-text text-transparent">
                 Công Trình Tiêu Biểu
               </span>
             </motion.h2>
-            <motion.div variants={fadeInUp} className="w-full">
+            <motion.div
+              variants={fadeInUp}
+              className="w-full px-2"
+            >
               <Slider {...settings}>
                 {featuredProjects.map((project) => (
                   <motion.div
@@ -401,7 +421,7 @@ const HomePage = () => {
                     whileHover={{ scale: 1.02 }}
                   >
                     <Link to={`/products/${project.id}`}>
-                      <div className="font-philosopher rounded-lg overflow-hidden shadow-lg border border-[#B8860B] hover:border-[#B8860B] bg-[#b8860b66] hover:bg-[#b8870bcd] transition-all duration-500">
+                      <div className="font-philosopher rounded-lg overflow-hidden shadow-lg border border-[#B8860B] hover:border-[#FFD700] bg-[#b8860b66] hover:bg-[#b8870bcd] transition-all duration-500">
                         <img src={project.image} alt={project.title} className="w-full h-64 object-cover" />
                         <div className="p-6">
                           <h3 className="text-xl font-bold mb-2 text-white">{project.title}</h3>

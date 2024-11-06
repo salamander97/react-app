@@ -427,7 +427,7 @@ const SubProjectDetail = ({ project, onClose }) => {
             </motion.div>
           </div>
         </div>
-        <div className="font-mono grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap- pb-8">
+        <div className="font-mono grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 pb-8">
 
           {Object.entries(productData).map(([productId, product], index) => (
             <Link

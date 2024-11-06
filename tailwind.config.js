@@ -5,21 +5,7 @@ module.exports = {
     "./src/**/*.{js,jsx,ts,tsx}",
   ],
   theme: {
-    extend: {
-      screens: {
-        'xs': '375px',
-      },
-    },
+    extend: {},
   },
-  plugins: [
-    function({ addUtilities }) {
-      const newUtilities = {
-        '.safe-padding': {
-          paddingLeft: 'env(safe-area-inset-left)',
-          paddingRight: 'env(safe-area-inset-right)',
-        },
-      }
-      addUtilities(newUtilities);
-    }
-  ],
+  plugins: [],
 };

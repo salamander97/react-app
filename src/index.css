@@ -23,6 +23,7 @@ body {
   -moz-osx-font-smoothing: grayscale;
   -webkit-overflow-scrolling: touch;
   height: 100%;
+  overflow: auto;
   position: relative;
   -webkit-overflow-scrolling: touch;
   /* Prevent bouncing but allow scrolling */

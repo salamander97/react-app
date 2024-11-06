@@ -5,7 +5,9 @@ const IMAGE_PATHS = {
   BAIDINH: 'images/congtrinhthicong/chuabaidinh',
   TAMCHUC: 'images/congtrinhthicong/tamchuc',
   MANDALA: 'images/congtrinhthicong/mandala',
-  TRANGAN: 'images/congtrinhthicong/trangan'
+  TRANGAN: 'images/congtrinhthicong/trangan',
+  CHUYENKINHLUAN: 'images/congtrinhthicong/mattong/chuyenkinhluan',
+  CHUYKIMCANG: 'images/congtrinhthicong/mattong/chuykimcang'
 };
 
 // Các loại media

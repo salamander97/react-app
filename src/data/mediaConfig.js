@@ -7,8 +7,8 @@ export const productData = {
     id: 1,
     "title": "Chùa Bái Đính, Ninh Bình",
     image: getImagePath('BAIDINH', 'chuabaidinh.jpeg'),
-    "description": "Chùa Bái Đính là một trong những quần thể chùa chiền lớn nhất Việt Nam, thu hút du khách bởi kiến trúc hoành tráng và các giá trị tâm linh sâu sắc.",
-    "details": {
+    description: "Chùa Bái Đính là một trong những quần thể chùa chiền lớn nhất Việt Nam, thu hút du khách bởi kiến trúc hoành tráng và các giá trị tâm linh sâu sắc.",
+    details: {
       "Tượng Phật Vàng": {
         "description": "Bức tượng Phật bằng đồng lớn nhất Đông Nam Á, là biểu tượng của sự an lành và thanh tịnh."
       },
@@ -22,7 +22,7 @@ export const productData = {
         "description": "Nhiều đền thờ được xây dựng quanh khuôn viên chùa, mỗi đền có kiến trúc và mục đích riêng, thể hiện sự đa dạng trong tâm linh và văn hóa."
       }
     },
-    "features": [
+    features: [
       {
         "name": "Kiến trúc đặc sắc",
         "description": "Kiến trúc chùa kết hợp giữa cổ điển và hiện đại, với những đường nét tinh xảo, phản ánh sự kỳ vĩ của nghệ thuật Phật giáo."
@@ -242,7 +242,6 @@ export const productData = {
   ,
   4: {
     id: 4,
-
     "title": "Chùa Vàng Chùa Bạc, Tràng An",
     image: getImagePath('TRANGAN', 'chuavangchuabac.png'),
     "description": "Chùa Vàng Chùa Bạc là một điểm tham quan tâm linh nổi bật tại khu du lịch Tràng An, tỉnh Ninh Bình, với hai ngôi chùa chính được mạ vàng và bạc.",
@@ -272,7 +271,66 @@ export const productData = {
         "description": "Chùa nằm ở vị trí độc đáo giữa cảnh quan núi rừng Tràng An, cung cấp tầm nhìn tuyệt đẹp ra các ngọn núi đá vôi và mặt nước trong xanh của khu vực."
       }
     ]
-
   }
+  ,
+  5: {
+    id: 5,
+    title: "Chuyển Kinh Luân bằng Đồng",
+    image: getImagePath('CHUYENKINHLUAN', 'chuyenkinhluan1.jpg'),
+    description: "Chuyển Kinh Luân bằng đồng là một nghi lễ tâm linh sâu sắc trong Phật giáo mật tông, thể hiện sự lan toả chánh pháp qua hành động xoay các bánh xe kinh cầu.",
+    details: {
+      "Ý Nghĩa Tâm Linh": {
+        "description": "Việc xoay kinh luân tượng trưng cho sự lan truyền chánh pháp và làm lợi lạc chúng sinh, mỗi vòng xoay tương đương với việc đọc kinh, tích lũy công đức."
+      },
+      "Cấu Trúc": {
+        "description": "Kinh luân thường được làm từ đồng, chứa các bản kinh được viết hoặc in trên giấy, cuộn tròn và đặt trong một trụ có thể xoay quanh trục."
+      }
+    },
+    features: [
+      {
+        "name": "Tích Lũy Công Đức",
+        "description": "Xoay kinh luân giúp tích lũy công đức tương đương với việc tụng đọc kinh nguyện."
+      },
+      {
+        "name": "Hoạt Động Tâm Linh",
+        "description": "Nghi lễ này được thực hiện trong các buổi lễ quan trọng và thường xuyên tại các chùa, như một phần của thực hành hàng ngày."
+      },
+      {
+        "name": "Tạo Hòa Bình Tâm Linh",
+        "description": "Chuyển kinh luân mang lại sự bình an và tĩnh tâm cho người thực hành và được coi là một hành động của sự từ bi và trí tuệ."
+      },
+      {
+        "name": "Kiến Trúc và Thiết Kế",
+        "description": "Các kinh luân được thiết kế một cách tinh xảo với chi tiết nghệ thuật phong phú, thường được trang trí bằng các họa tiết Phật giáo truyền thống."
+      }
+    ],
+    subProjects: [
+      {
+        id: "sp-1",
+        title: "Sản xuất Chuyển Kinh Luân",
+        description: "Quá trình sản xuất và chế tác kinh luân bằng đồng, từ khâu thiết kế mẫu mã đến hoàn thiện sản phẩm.",
+        shortDesc: "Quá trình chi tiết về sản xuất Chuyển Kinh Luân bằng đồng",
+        details: "Mỗi bánh xe kinh luân được tạo ra bằng tay bởi các nghệ nhân lành nghề, với sự chú trọng đặc biệt vào chất lượng và chi tiết. Các bánh xe sau khi hoàn thiện đều trải qua quá trình kiểm tra nghiêm ngặt để đảm bảo chất lượng tối ưu trước khi đưa vào sử dụng.\n- Chất liệu: Đồng nguyên chất\n- Kỹ thuật: Đúc và chạm khắc thủ công\n- Chi tiết: Hoa văn và biểu tượng Phật giáo",
+
+        images: [
+          {
+            url: getImagePath('CHUYENKINHLUAN', 'chuyenkinhluan3.jpg'),
+            caption: "Giai đoạn sản xuất kinh luân"
+          },
+          {
+            url: getImagePath('CHUYENKINHLUAN', 'chuyenkinhluan2.jpg'),
+            caption: "Chi tiết hoàn thiện sản phẩm"
+          }
+        ],
+        videos: [
+          {
+            url: getImagePath('CHUYENKINHLUAN', 'video_chuyenkinhluan.mp4'),
+            caption: "Video chi tiết về Chuyển Kinh Luân"
+          }
+        ],
+      }
+    ]
+  }  
+  
 };
 

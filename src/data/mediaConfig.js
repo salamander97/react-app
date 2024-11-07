@@ -4,7 +4,71 @@ import { getImagePath } from '../utils/imageHelper';
 
 export const productData = {
   1: {
-    id: 1,
+    "id": 1,
+    "title": "Đại Bảo Tháp Mandala",
+    "description": "Đại Bảo Tháp Mandala, một kiệt tác kiến trúc tâm linh, thu hút người xem bởi sự hòa quyện giữa nghệ thuật và thiền định trong không gian thiêng liêng.",
+    "image": getImagePath('MANDALA', 'mandalaTayThien.jpg'),
+    "images": [
+      {
+          src: getImagePath('MANDALA', 'mandalaTayThien.jpg'),
+          title: "Đại Bảo Tháp Mandala - Tổng quan"
+      },
+      {
+          src: getImagePath('CHUYENKINHLUAN', 'chuyenkinhluan1.jpg'),
+          title: "Chuyển Kinh Luân - Góc nhìn 1"
+      },
+      {
+          src: getImagePath('CHUYENKINHLUAN', 'chuyenkinhluan2.jpg'),
+          title: "Chuyển Kinh Luân - Chi tiết"
+      },
+      {
+          src: getImagePath('MANDALA', 'lademattong1.jpg'),
+          title: "La Đề Mặt Tổng - Phối cảnh 1"
+      },
+      {
+          src: getImagePath('MANDALA', 'lademattong2.jpg'),
+          title: "La Đề Mặt Tổng - Phối cảnh 2"
+      },
+      {
+          src: getImagePath('MANDALA', 'mandala.jpg'),
+          title: "Mandala - Chi tiết nghệ thuật"
+      }
+  ],
+    "details": {
+      "Kiến Trúc Mandala": {
+        "description": "Đại Bảo Tháp Mandala được thiết kế theo hình thức Mandala, phản ánh bản đồ của vũ trụ trong Phật giáo, tạo nên không gian linh thiêng và cân bằng."
+      },
+      "Truyền Thống và Hiện Đại": {
+        "description": "Công trình kết hợp hài hòa giữa yếu tố truyền thống Á Đông và các thiết kế hiện đại, mang đến một không gian thiền định lý tưởng cho tín đồ và du khách."
+      },
+      "Không Gian Thiền Định": {
+        "description": "Được thiết kế để tối ưu hóa sự tập trung và thiền định, Đại Bảo Tháp cung cấp một không gian yên tĩnh nơi các tín đồ có thể tìm thấy sự bình yên và tĩnh tâm."
+      },
+      "Trung Tâm Tâm Linh": {
+        "description": "Đại Bảo Tháp không chỉ là một công trình kiến trúc mà còn là trung tâm của hoạt động tâm linh, thu hút tín đồ Phật giáo từ khắp nơi trên thế giới."
+      }
+    },
+    "features": [
+      {
+        "name": "Kiến trúc Mandala",
+        "description": "Cấu trúc dựa trên mô hình Mandala, biểu tượng của vũ trụ trong triết học Phật giáo, tạo nên không gian linh thiêng và cân bằng."
+      },
+      {
+        "name": "Phù điêu nghệ thuật",
+        "description": "Các bức phù điêu điêu khắc tinh xảo trên các bức tường và cổng vào tháp, thể hiện sự khéo léo và tinh thần tôn kính trong từng chi tiết."
+      },
+      {
+        "name": "Không gian thiền định",
+        "description": "Không gian yên tĩnh, được thiết kế để tối ưu hóa sự tập trung và thiền định, giúp du khách và tín đồ tìm được sự thanh thản trong tâm hồn."
+      },
+      {
+        "name": "Bảo tháp trung tâm",
+        "description": "Là điểm nhấn trung tâm của toàn bộ quần thể, nơi lưu giữ xá lợi Phật và các bảo vật tâm linh, thu hút du khách từ khắp nơi trên thế giới."
+      }
+    ]
+  },
+  2: {
+    id: 2,
     "title": "Chùa Bái Đính, Ninh Bình",
     image: getImagePath('BAIDINH', 'chuabaidinh.jpeg'),
     description: "Chùa Bái Đính là một trong những quần thể chùa chiền lớn nhất Việt Nam, thu hút du khách bởi kiến trúc hoành tráng và các giá trị tâm linh sâu sắc.",
@@ -160,46 +224,8 @@ export const productData = {
       }
 
     ]
-  },
-  2: {
-    "id": 2,
-    "title": "Đại Bảo Tháp Mandala",
-    "description": "Đại Bảo Tháp Mandala, một kiệt tác kiến trúc tâm linh, thu hút người xem bởi sự hòa quyện giữa nghệ thuật và thiền định trong không gian thiêng liêng.",
-    "image": getImagePath('MANDALA', 'mandalaTayThien.jpg'),
-    "details": {
-      "Kiến Trúc Mandala": {
-        "description": "Đại Bảo Tháp Mandala được thiết kế theo hình thức Mandala, phản ánh bản đồ của vũ trụ trong Phật giáo, tạo nên không gian linh thiêng và cân bằng."
-      },
-      "Truyền Thống và Hiện Đại": {
-        "description": "Công trình kết hợp hài hòa giữa yếu tố truyền thống Á Đông và các thiết kế hiện đại, mang đến một không gian thiền định lý tưởng cho tín đồ và du khách."
-      },
-      "Không Gian Thiền Định": {
-        "description": "Được thiết kế để tối ưu hóa sự tập trung và thiền định, Đại Bảo Tháp cung cấp một không gian yên tĩnh nơi các tín đồ có thể tìm thấy sự bình yên và tĩnh tâm."
-      },
-      "Trung Tâm Tâm Linh": {
-        "description": "Đại Bảo Tháp không chỉ là một công trình kiến trúc mà còn là trung tâm của hoạt động tâm linh, thu hút tín đồ Phật giáo từ khắp nơi trên thế giới."
-      }
-    },
-    "features": [
-      {
-        "name": "Kiến trúc Mandala",
-        "description": "Cấu trúc dựa trên mô hình Mandala, biểu tượng của vũ trụ trong triết học Phật giáo, tạo nên không gian linh thiêng và cân bằng."
-      },
-      {
-        "name": "Phù điêu nghệ thuật",
-        "description": "Các bức phù điêu điêu khắc tinh xảo trên các bức tường và cổng vào tháp, thể hiện sự khéo léo và tinh thần tôn kính trong từng chi tiết."
-      },
-      {
-        "name": "Không gian thiền định",
-        "description": "Không gian yên tĩnh, được thiết kế để tối ưu hóa sự tập trung và thiền định, giúp du khách và tín đồ tìm được sự thanh thản trong tâm hồn."
-      },
-      {
-        "name": "Bảo tháp trung tâm",
-        "description": "Là điểm nhấn trung tâm của toàn bộ quần thể, nơi lưu giữ xá lợi Phật và các bảo vật tâm linh, thu hút du khách từ khắp nơi trên thế giới."
-      }
-    ]
-  },
-
+  }
+  ,
   3: {
     "id": 3,
     "title": "Chùa Tam Chúc",

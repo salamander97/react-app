@@ -9,7 +9,7 @@ import SubProjectPage from './components/SubProjectPage';
 import Contact from './components/Contact';
 import MobileDevice from './components/MobileDevice';
 import ScrollToTop from './components/ScrollToTop';
-import ContactButton from './components/ContactButton';
+// import ContactButton from './components/ContactButton';
 
 function App() {
   useEffect(() => {
@@ -42,6 +42,7 @@ function App() {
   return (
     <div style={{ position: 'relative' }}>
       <Router>
+      <ScrollToTop />
         {/* <ContactButton /> */}
         <div className="flex flex-col min-h-screen bg-[#1a1a1a]">
           <Header />

@@ -1,32 +1,48 @@
 // components/ProductDetails.js
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect} from 'react';
 import { useNavigate, Link, useLocation } from 'react-router-dom';
 import { X } from 'lucide-react';
 import { productData } from '../data/mediaConfig';
-
 // Di chuyển các components modal vào đây
 const ImageModal = ({ isOpen, onClose, image, title }) => {
     if (!isOpen) return null;
 
     return (
-        <div className="fixed inset-0 bg-black/90 z-50 flex items-center justify-center p-4">
-            <div className="relative w-full max-w-5xl mx-auto">
-                <button
-                    onClick={onClose}
-                    className="absolute -top-12 right-0 text-amber-500 hover:text-amber-400 transform hover:rotate-90 transition-all duration-300"
-                >
-                    <X size={32} />
-                </button>
-                <div className="relative">
-                    <img
-                        src={image}
-                        alt={title}
-                        className="w-full h-auto max-h-[80vh] object-contain"
-                    />
-                    <p className="text-amber-500 text-center mt-4 text-lg">{title}</p>
-                </div>
+<div className="sticky top 1/2 inset-5 z-50 flex items-center justify-center p-8" >
+    <div
+        className="relative w-full max-w-4xl mx-auto 
+                  bg-gradient-to-br from-stone-900/70 via-amber-900/30 to-zinc-800/60 
+                  backdrop-blur-md rounded-xl 
+                  border border-stone-400/20 
+                  shadow-2xl shadow-black/20 
+                  transition-all duration-300
+                  hover:border-amber-400/30"
+    >
+        <button
+            onClick={onClose}
+            className="absolute -top-12 right-0 text-stone-200 hover:text-amber-400 
+                     transform hover:rotate-90 transition-all duration-300
+                     drop-shadow-lg"
+        >
+            <X size={32} />
+        </button>
+        <div className="relative p-6">
+            <img
+                src={image}
+                alt={title}
+                className="w-full h-auto max-h-[75vh] object-contain rounded-lg
+                         ring-1 ring-stone-400/20 shadow-xl shadow-black/20"
+            />
+            <div className="mt-4 bg-gradient-to-r from-stone-900/60 via-amber-900/30 to-stone-900/60
+                          backdrop-blur-sm rounded-lg p-4 
+                          border-t border-stone-400/20
+                          hover:border-amber-400/30 transition-all duration-300">
+                <p className="text-stone-200 text-center text-lg font-medium tracking-wide
+                          drop-shadow-lg">{title}</p>
             </div>
         </div>
+    </div>
+</div>
     );
 };
 
@@ -102,7 +118,7 @@ const ProductDetails = ({ product }) => {
     }, [location.pathname]);
 
     return (
-        <main className="container mx-auto px-4 py-8 relative z-10">
+        <main className="container mx-auto px-4 py-8 relative z-10 ">
             {/* Hero Section */}
             <div className={`relative h-96 mb-12 overflow-hidden rounded-lg transform transition-all duration-1000
             ${isVisible ? 'translate-y-0 opacity-100' : 'translate-y-10 opacity-0'}`}>
@@ -128,8 +144,33 @@ const ProductDetails = ({ product }) => {
 
             <div className={`grid grid-cols-1 md:grid-cols-2 gap-12 mt-12 transform transition-all duration-1000
               ${isVisible ? 'translate-y-0 opacity-100' : 'translate-y-10 opacity-0'}`}
+
                 style={{ transitionDelay: '400ms' }}>
-                <div className="space-y-6">
+                <div className="backdrop-blur-sm bg-amber-900/20 p-6 rounded-lg border border-amber-500/30
+                hover:border-amber-500 hover:shadow-lg hover:shadow-amber-500/20 transition-all duration-300
+                flex flex-col h-full">
+                    <h2 className="font-quicksand font-extrabold text-2xl text-amber-500 mb-4">
+                        Hình ảnh công trình
+                    </h2>
+
+                    {/* Thêm flex-1 để grid chiếm hết không gian còn lại */}
+                    <div className="grid grid-cols-2 gap-4 flex-1">
+                        {product.images.map((image, index) => (
+                            <div key={index} className="aspect-square overflow-hidden rounded-lg group">
+                                <img
+                                    src={image.src}
+                                    alt={image.title}
+                                    className="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-500 cursor-pointer"
+                                    onClick={() => setSelectedImage({
+                                        src: image.src,
+                                        title: image.title
+                                    })}
+                                />
+                            </div>
+                        ))}
+                    </div>
+                </div>
+                <div className="space-y-6 h-full flex flex-col">
                     <div className="backdrop-blur-sm bg-amber-900/20 p-6 rounded-lg border border-amber-500/30 
                   hover:border-amber-500 hover:shadow-lg hover:shadow-amber-500/20 transition-all duration-300">
                         <h2 className="font-quicksand font-extrabold text-2xl text-amber-500 mb-4">Chi tiết công trình</h2>
@@ -164,25 +205,7 @@ const ProductDetails = ({ product }) => {
                         </div>
                     )}
                 </div>
-                <div className="backdrop-blur-sm bg-amber-900/20 p-6 rounded-lg border border-amber-500/30
-                hover:border-amber-500 hover:shadow-lg hover:shadow-amber-500/20 transition-all duration-300">
-                    <h2 className="font-quicksand font-extrabold text-2xl text-amber-500 mb-4">Hình ảnh công trình</h2>
-                    <div className="grid grid-cols-2 gap-4">
-                        {[1, 2, 3, 4].map((num) => (
-                            <div key={num} className="aspect-square overflow-hidden rounded-lg group">
-                                <img
-                                    src={product.image}
-                                    alt={`${product.title} ${num}`}
-                                    className="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-500 cursor-pointer"
-                                    onClick={() => setSelectedImage({
-                                        src: product.image,
-                                        title: `${product.title} - Hình ${num}`
-                                    })}
-                                />
-                            </div>
-                        ))}
-                    </div>
-                </div>
+
             </div>
             {/* Sub Projects Section */}
             {product.subProjects && (
@@ -219,7 +242,7 @@ const ProductDetails = ({ product }) => {
                 <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
                     {Object.entries(productData)
                         .filter(([key, p]) => p.id !== product.id)
-                        .slice(0, 4)
+                        .slice(0, 5)
                         .map(([key, relatedProduct], index) => (
                             <Link
                                 key={key}
@@ -252,6 +275,7 @@ const ProductDetails = ({ product }) => {
                 image={selectedImage?.src}
                 title={selectedImage?.title}
             />
+
         </main>
     );
 };

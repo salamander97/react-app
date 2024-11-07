@@ -53,7 +53,7 @@ function App() {
               <Route path="/products" element={<Products />} />
               <Route path="/products/:id" element={<Products />} />
               <Route path="/products/:productId/subproject/:subprojectId" element={<SubProjectPage />} />
-              {/* <Route path="/contact" element={<Contact />} /> */}
+              <Route path="/contact" element={<Contact />} />
             </Routes>
           </main>
         </div>

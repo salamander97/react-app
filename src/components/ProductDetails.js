@@ -46,13 +46,26 @@ const ImageModal = ({ isOpen, onClose, image, title }) => {
     );
 };
 
-const SubProjectCard = ({ project, productId }) => {
+const SubProjectCard = ({ project, product }) => {
     const navigate = useNavigate();
 
     const handleClick = () => {
-        console.log('Navigating to:', `/products/${productId}/subproject/${project.id}`);
-        navigate(`/products/${productId}/subproject/${project.id}`);
+        console.log('Debug SubProjectCard:', {
+            fullProduct: product,
+            hasSlug: !!product.slug,
+            slug: product.slug,
+            projectId: project.id,
+            intendedURL: `/products/${product.slug}/${project.id}`
+        });
+
+        if (!product.slug) {
+            console.error('Product is missing slug!', product);
+            return;
+        }
+
+        navigate(`/products/${product.slug}/${project.id}`);
     };
+
 
     return (
         <div
@@ -238,7 +251,7 @@ const ProductDetails = ({ product }) => {
                             >
                                 <SubProjectCard
                                     project={project}
-                                    productId={product.id}
+                                    product={product}
                                 />
                             </div>
                         ))}
@@ -260,7 +273,7 @@ const ProductDetails = ({ product }) => {
                         .map(([key, relatedProduct], index) => (
                             <Link
                                 key={key}
-                                to={`/products/${relatedProduct.id}`}
+                                to={`/products/${relatedProduct.slug}`}
                                 className={`font-quicksand font-extrabold backdrop-blur-sm bg-amber-900/20 rounded-lg overflow-hidden border border-amber-500/30
                       hover:border-amber-500 hover:shadow-lg hover:shadow-amber-500/20 transition-all duration-300 transform
                       ${isVisible ? 'translate-y-0 opacity-100' : 'translate-y-10 opacity-0'}`}

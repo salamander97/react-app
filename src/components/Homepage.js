@@ -62,7 +62,7 @@ const HomePage = () => {
     { id: 2, title: "Đại bảo tháp Mandala", description: "Các công trình đại bảo tháp", image: mandalaTayThien },
     { id: 3, title: "Chùa Tam Chúc", description: "Các công trình chùa Tam Chúc", image: chuaTamChuc },
     { id: 4, title: "Chùa vàng chùa bạc", description: "Chùa vàng chùa bạc Tràng An", image: chuaVangBac },
-    { id: 5, title: "Chuyển kinh luân", description: "Chuyển kinh luân bằng đồng", image: chuyenKinhLuan},
+    { id: 5, title: "Chuyển kinh luân", description: "Chuyển kinh luân bằng đồng", image: chuyenKinhLuan },
   ];
 
   const settings = {
@@ -421,8 +421,11 @@ const HomePage = () => {
                     className="px-2 md:px-4"
                     whileHover={{ scale: 1.02 }}
                   >
-                    <Link to={`/products/${project.id}`}>
-                      <div className="font-philosopher rounded-lg overflow-hidden shadow-lg border border-[#B8860B] hover:border-[#FFD700] bg-[#b8860b66] hover:bg-[#b8870bcd] transition-all duration-500">
+                    <Link to={`/products/${project.slug}`}>  {/* Thay project.id bằng project.slug */}
+                      <div className="font-philosopher rounded-lg overflow-hidden shadow-lg 
+                    border border-[#B8860B] hover:border-[#FFD700] 
+                    bg-[#b8860b66] hover:bg-[#b8870bcd] 
+                    transition-all duration-500">
                         <img src={project.image} alt={project.title} className="w-full h-64 object-cover" />
                         <div className="p-6">
                           <h3 className="text-xl font-bold mb-2 text-white">{project.title}</h3>

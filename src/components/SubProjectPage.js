@@ -4,37 +4,38 @@ import { X } from 'lucide-react';
 import { productData } from '../data/mediaConfig';
 
 const SubProjectPage = () => {
-  const { productId, subprojectId } = useParams();
+  const { productSlug, subprojectId } = useParams();
   const navigate = useNavigate();
 
-  console.log('URL Params:', { productId, subprojectId }); // Debug URL params
-  console.log('Product Data:', productData); // Debug full data
 
-  // Tìm product trong productData
-  const product = productData[productId];
-  console.log('Found Product:', product); // Debug product
+  // Tìm product trong productData với xử lý linh hoạt hơn
+  const product = Object.values(productData).find(p => p.slug === productSlug);
 
-  // Tìm subProject, chuyển đổi ID nếu cần
+
+  // Tìm subProject
   const subProject = product?.subProjects?.find(
     p => String(p.id) === String(subprojectId)
   );
-  console.log('Found SubProject:', subProject); // Debug subproject
+  console.log('7. Found SubProject:', subProject);
 
   const [isVisible, setIsVisible] = useState(false);
   const [selectedImage, setSelectedImage] = useState(null);
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
-  // const touchStartRef = useRef(null);
-  // const touchEndRef = useRef(null);
 
   useEffect(() => {
     if (!product || !subProject) {
-      console.log('No data found, navigating back...');
+      console.log('4. Navigation triggered:', {
+        hasProduct: !!product,
+        hasSubProject: !!subProject,
+        productSlug,
+        subprojectId
+      });
       navigate('/products');
       return;
     }
     setIsVisible(true);
     window.scrollTo(0, 0);
-  }, [product, subProject, navigate]);
+  }, [product, subProject, navigate, productSlug, subprojectId]);
 
   // Return loading state while checking data
   if (!product || !subProject) {
@@ -110,7 +111,7 @@ const SubProjectPage = () => {
         <div className="flex justify-between items-center mb-8">
           {/* Nút Trở về */}
           <button
-            onClick={() => navigate(`/products/${productId}`)}
+            onClick={() => navigate(`/products/${productSlug}`)}
             className="flex items-center gap-2 text-amber-500 hover:text-amber-400 
                                  px-4 py-2 rounded-lg border border-amber-500/30 
                                  hover:border-amber-500 transition-all duration-300
@@ -120,7 +121,7 @@ const SubProjectPage = () => {
             <span>←</span>
             <span>Trở về trang trước</span>
           </button>
-          
+
         </div>
 
         <div className={`max-w-4xl mx-auto transform transition-all duration-700 delay-100

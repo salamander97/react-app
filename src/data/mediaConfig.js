@@ -4,11 +4,12 @@ import { getImagePath } from '../utils/imageHelper';
 
 export const productData = {
   1: {
-    "id": 1,
-    "title": "Đại Bảo Tháp Mandala",
-    "description": "Đại Bảo Tháp Mandala, một kiệt tác kiến trúc tâm linh, thu hút người xem bởi sự hòa quyện giữa nghệ thuật và thiền định trong không gian thiêng liêng.",
-    "image": getImagePath('MANDALA', 'mandalaTayThien.jpg'),
-    "images": [
+    id: 1,
+    slug: 'dai-bao-thap-mandala',
+    title: "Đại Bảo Tháp Mandala",
+    description: "Đại Bảo Tháp Mandala, một kiệt tác kiến trúc tâm linh, thu hút người xem bởi sự hòa quyện giữa nghệ thuật và thiền định trong không gian thiêng liêng.",
+    image: getImagePath('MANDALA', 'mandalaTayThien.jpg'),
+    images: [
       {
           src: getImagePath('MANDALA', 'mandalaTayThien.jpg'),
           title: "Đại Bảo Tháp Mandala - Tổng quan"
@@ -34,7 +35,7 @@ export const productData = {
           title: "Mandala - Chi tiết nghệ thuật"
       }
   ],
-    "details": {
+    details: {
       "Kiến Trúc Mandala": {
         "description": "Đại Bảo Tháp Mandala được thiết kế theo hình thức Mandala, phản ánh bản đồ của vũ trụ trong Phật giáo, tạo nên không gian linh thiêng và cân bằng."
       },
@@ -48,7 +49,7 @@ export const productData = {
         "description": "Đại Bảo Tháp không chỉ là một công trình kiến trúc mà còn là trung tâm của hoạt động tâm linh, thu hút tín đồ Phật giáo từ khắp nơi trên thế giới."
       }
     },
-    "features": [
+    features: [
       {
         "name": "Kiến trúc Mandala",
         "description": "Cấu trúc dựa trên mô hình Mandala, biểu tượng của vũ trụ trong triết học Phật giáo, tạo nên không gian linh thiêng và cân bằng."
@@ -69,7 +70,8 @@ export const productData = {
   },
   2: {
     id: 2,
-    "title": "Chùa Bái Đính, Ninh Bình",
+    slug: 'chua-bai-dinh',
+    title: "Chùa Bái Đính, Ninh Bình",
     image: getImagePath('BAIDINH', 'chuabaidinh.jpeg'),
     images: [
       {
@@ -250,7 +252,8 @@ export const productData = {
   }
   ,
   3: {
-    "id": 3,
+    id: 3,
+    slug: 'chua-tam-chuc',
     "title": "Chùa Tam Chúc",
     image: getImagePath('TAMCHUC', 'chuatamchuc.jpeg'),
     images: [
@@ -306,7 +309,8 @@ export const productData = {
   ,
   4: {
     id: 4,
-    "title": "Chùa Vàng Chùa Bạc, Tràng An",
+    slug: 'chua-vang-chua-bac',
+    title: "Chùa Vàng Chùa Bạc, Tràng An",
     image: getImagePath('TRANGAN', 'chuavangchuabac.png'),
     images: [
       {
@@ -349,6 +353,7 @@ export const productData = {
   ,
   5: {
     id: 5,
+    slug: 'chuyen-kinh-luan',
     title: "Chuyển Kinh Luân bằng Đồng",
     image: getImagePath('CHUYENKINHLUAN', 'chuyenkinhluan1.jpg'),
     images: [
@@ -422,3 +427,18 @@ export const productData = {
   
 };
 
+Object.values(productData).forEach(product => {
+  if (!product.slug) {
+      console.warn(`Product ${product.id} missing slug!`);
+      // Tự động tạo slug nếu chưa có
+      product.slug = product.title
+          .toLowerCase()
+          .normalize('NFD')
+          .replace(/[\u0300-\u036f]/g, '')
+          .replace(/[đĐ]/g, 'd')
+          .replace(/[^a-z0-9\s-]/g, '')
+          .replace(/\s+/g, '-')
+          .replace(/-+/g, '-')
+          .trim();
+  }
+});

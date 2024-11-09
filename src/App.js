@@ -23,7 +23,7 @@ function App() {
     window.addEventListener('resize', setVH);
     window.addEventListener('orientationchange', setVH);
 
-    document.body.addEventListener('touchmove', function(e) {
+    document.body.addEventListener('touchmove', function (e) {
       if (this.scrollTop === 0) {
         this.scrollTop = 1;
       } else if (this.scrollHeight === this.scrollTop + this.offsetHeight) {
@@ -42,19 +42,24 @@ function App() {
   return (
     <div style={{ position: 'relative' }}>
       <Router>
-      <ScrollToTop />
+        <ScrollToTop />
         {/* <ContactButton /> */}
         <div className="flex flex-col min-h-screen bg-[#1a1a1a]">
           <Header />
           <ScrollToTop />
           <main className="flex-1">
             <Routes>
-              <Route path="/" element={<Homepage />} />
-              <Route path="/about" element={<About />} />
-              <Route path="/products" element={<Products />} />
-              <Route path="/products/:id" element={<Products />} />
-              <Route path="/products/:productId/subproject/:subprojectId" element={<SubProjectPage />} />
+               {/* Static routes first */}
+               <Route path="/about" element={<About />} />
               <Route path="/contact" element={<Contact />} />
+              
+              {/* Products routes */}
+              <Route path="/products" element={<Products />} />
+              <Route path="/products/:productSlug/:subprojectId" element={<SubProjectPage />} />
+              <Route path="/products/:slug" element={<Products />} />
+              
+              {/* Homepage last */}
+              <Route path="/" element={<Homepage />} />
             </Routes>
           </main>
         </div>

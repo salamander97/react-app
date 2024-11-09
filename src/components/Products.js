@@ -245,10 +245,10 @@ const ProductList = () => {
 
           {Object.entries(productData).map(([productId, product], index) => (
             <Link
-              to={`/products/${productId}`}
+              to={`/products/${product.slug}`}  // Thay productId bằng product.slug
               key={productId}
               className={`group transform hover:-translate-y-1 transition-all duration-300
-                ${isVisible ? 'translate-y-0 opacity-100' : 'translate-y-10 opacity-0'}`}
+            ${isVisible ? 'translate-y-0 opacity-100' : 'translate-y-10 opacity-0'}`}
               style={{ transitionDelay: `${200 + index * 100}ms` }}
             >
               <div className="bg-amber-900/20 rounded-lg overflow-hidden shadow-lg border border-amber-500/30 
@@ -283,25 +283,36 @@ const ProductList = () => {
     </div>
   );
 };
+
 const Products = () => {
-  const { id } = useParams();
+  const { slug } = useParams();
   const location = useLocation();
-  const productId = parseInt(id, 10);
-  const currentProduct = productData[productId];
+
+  console.log('Products component:', {
+    receivedSlug: slug,
+    allProducts: Object.values(productData).map(p => ({
+      id: p.id,
+      slug: p.slug,
+      title: p.title
+    }))
+  });
+
+  const currentProduct = slug
+    ? Object.values(productData).find(p =>
+      String(p.id) === slug || p.slug === slug
+    )
+    : null;
+  console.log('Found product:', currentProduct);
 
   useEffect(() => {
     window.scrollTo(0, 0);
   }, [location.pathname]);
 
-  // Nếu không có id hoặc không tìm thấy sản phẩm, hiển thị danh sách
   if (!currentProduct) {
-    return <ProductList />; // Giữ nguyên component ProductList như cũ
+    return <ProductList />;
   }
 
-  // Nếu có id và tìm thấy sản phẩm, hiển thị chi tiết
-  return (
-      <ProductDetails product={currentProduct} />
-  );
+  return <ProductDetails product={currentProduct} />;
 };
 
 export default Products;

@@ -71,6 +71,29 @@ export const productData = {
     id: 2,
     "title": "Chùa Bái Đính, Ninh Bình",
     image: getImagePath('BAIDINH', 'chuabaidinh.jpeg'),
+    images: [
+      {
+        src: getImagePath('BAIDINH', 'chuabaidinh.jpeg'),
+        title: "Chùa Bái Đính - Tổng quan"
+      },
+      {
+        src: getImagePath('BAIDINH', 'trongdong.jpg'),
+        title: "Trống đồng - Chi tiết"
+      },
+      {
+        src: getImagePath('BAIDINH', 'caudoi1.jpg'),
+        title: "Câu đối - Chi tiết"
+      },
+      {
+        src: getImagePath('BAIDINH', 'lade1.jpg'),
+        title: "Lá đề - Chi tiết"
+      },
+      {
+        src: getImagePath('BAIDINH', 'trandong1.jpg'),
+        title: "Trần đồng - Chi tiết"
+      }
+    ],
+
     description: "Chùa Bái Đính là một trong những quần thể chùa chiền lớn nhất Việt Nam, thu hút du khách bởi kiến trúc hoành tráng và các giá trị tâm linh sâu sắc.",
     details: {
       "Tượng Phật Vàng": {
@@ -107,7 +130,7 @@ export const productData = {
 
     subProjects: [
       {
-        id: 'bd-1',
+        id: 'trongdong',
         title: 'Trống đồng',
         description: 'Trống đồng được chế tác thủ công với kỹ thuật đúc đồng truyền thống',
         shortDesc: 'Trống đồng nghi lễ với hoa văn tinh xảo',
@@ -141,7 +164,7 @@ export const productData = {
         ]
       },
       {
-        id: 'bd-2',
+        id: 'caudoi',
         title: 'Câu đối - Đại tự',
         description: 'Bộ câu đối và đại tự được chế tác bằng đồng nguyên chất',
         shortDesc: 'Câu đối và đại tự bằng đồng với nét chữ thanh thoát',
@@ -163,7 +186,7 @@ export const productData = {
         - Hoa văn: Các hoa tiết trang trí xung quanh các bảng câu đối phản ánh sự tinh tế và uy nghi của phong cách kiến trúc Phật giáo`,
       },
       {
-        id: 'bd-3',
+        id: 'lade',
         title: 'Lá đề',
         description: 'Lá đề bằng đồng với hoa văn truyền thống',
         shortDesc: 'Lá đề đồng trang trí kiến trúc',
@@ -190,7 +213,7 @@ export const productData = {
         ]
       },
       {
-        id: 'bd-4',
+        id: 'trandong',
         title: 'Trần bằng đồng',
         description: 'Trần đồng với họa tiết trang trí độc đáo',
         shortDesc: 'Trần đồng nghệ thuật cao cấp',
@@ -204,12 +227,12 @@ export const productData = {
             caption: 'Chi tiết họa tiết trần đồng'
           }
         ],
-        // videos: [
-        //   {
-        //     url: 'video-tran-dong.mp4',
-        //     caption: 'Quá trình lắp đặt trần đồng'
-        //   }
-        // ],
+        videos: [
+          {
+            url: 'video-tran-dong.mp4',
+            caption: 'Quá trình lắp đặt trần đồng'
+          }
+        ],
         details: `Trần đồng được thiết kế và thi công với kỹ thuật cao:
         - Diện tích: Theo không gian kiến trúc
         - Chất liệu: Đồng nguyên chất
@@ -230,6 +253,21 @@ export const productData = {
     "id": 3,
     "title": "Chùa Tam Chúc",
     image: getImagePath('TAMCHUC', 'chuatamchuc.jpeg'),
+    images: [
+      {
+        src: getImagePath('TAMCHUC', 'chuatamchuc.jpeg'),
+        title: "Chùa Tam Chúc - Tổng quan"
+      },
+      {
+        src: getImagePath('TAMCHUC', 'chuatamchuc.jpeg'),
+        title: "Chùa Tam Chúc - Góc nhìn 1"
+      },
+      {
+        src: getImagePath('TAMCHUC', 'chuatamchuc.jpeg'),
+        title: "Chùa Tam Chúc - Góc nhìn 2"
+      },
+      ],
+
     "description": "Chùa Tam Chúc, nằm tại Hà Nam, Việt Nam, là quần thể chùa lớn nhất thế giới, thu hút hàng triệu du khách và tín đồ Phật giáo mỗi năm bởi vẻ đẹp kiến trúc và vị trí ngoạn mục của nó.",
 
     "details": {
@@ -270,6 +308,16 @@ export const productData = {
     id: 4,
     "title": "Chùa Vàng Chùa Bạc, Tràng An",
     image: getImagePath('TRANGAN', 'chuavangchuabac.png'),
+    images: [
+      {
+        src: getImagePath('TRANGAN', 'chuavangchuabac.png'),
+        title: "Chùa Vàng Chùa Bạc - Tổng quan"
+      },
+      {
+        src: getImagePath('TRANGAN', 'chuavangchuabac.png'),
+        title: "Chùa Vàng - Chi tiết"
+      },
+      ],
     "description": "Chùa Vàng Chùa Bạc là một điểm tham quan tâm linh nổi bật tại khu du lịch Tràng An, tỉnh Ninh Bình, với hai ngôi chùa chính được mạ vàng và bạc.",
     "details": {
       "Ngôi Chùa Vàng": {
@@ -303,6 +351,20 @@ export const productData = {
     id: 5,
     title: "Chuyển Kinh Luân bằng Đồng",
     image: getImagePath('CHUYENKINHLUAN', 'chuyenkinhluan1.jpg'),
+    images: [
+      {
+        src: getImagePath('CHUYENKINHLUAN', 'chuyenkinhluan1.jpg'),
+        title: "Chuyển Kinh Luân - Tổng quan"
+      },
+      {
+        src: getImagePath('CHUYENKINHLUAN', 'chuyenkinhluan2.jpg'),
+        title: "Chuyển Kinh Luân - Góc nhìn 1"
+      },
+      {
+        src: getImagePath('CHUYENKINHLUAN', 'chuyenkinhluan3.jpg'),
+        title: "Chuyển Kinh Luân - Góc nhìn 2"
+      },
+      ],
     description: "Chuyển Kinh Luân bằng đồng là một nghi lễ tâm linh sâu sắc trong Phật giáo mật tông, thể hiện sự lan toả chánh pháp qua hành động xoay các bánh xe kinh cầu.",
     details: {
       "Ý Nghĩa Tâm Linh": {

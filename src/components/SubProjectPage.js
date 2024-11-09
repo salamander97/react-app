@@ -4,46 +4,46 @@ import { X } from 'lucide-react';
 import { productData } from '../data/mediaConfig';
 
 const SubProjectPage = () => {
-    const { productId, subprojectId } = useParams();
-    const navigate = useNavigate();
-    
-    console.log('URL Params:', { productId, subprojectId }); // Debug URL params
-    console.log('Product Data:', productData); // Debug full data
-    
-    // Tìm product trong productData
-    const product = productData[productId];
-    console.log('Found Product:', product); // Debug product
-  
-    // Tìm subProject, chuyển đổi ID nếu cần
-    const subProject = product?.subProjects?.find(
-      p => String(p.id) === String(subprojectId)
-    );
-    console.log('Found SubProject:', subProject); // Debug subproject
-  
-    const [isVisible, setIsVisible] = useState(false);
-    const [selectedImage, setSelectedImage] = useState(null);
-    const [currentImageIndex, setCurrentImageIndex] = useState(0);
-    // const touchStartRef = useRef(null);
-    // const touchEndRef = useRef(null);
-  
-    useEffect(() => {
-      if (!product || !subProject) {
-        console.log('No data found, navigating back...');
-        navigate('/products');
-        return;
-      }
-      setIsVisible(true);
-      window.scrollTo(0, 0);
-    }, [product, subProject, navigate]);
-  
-    // Return loading state while checking data
+  const { productId, subprojectId } = useParams();
+  const navigate = useNavigate();
+
+  console.log('URL Params:', { productId, subprojectId }); // Debug URL params
+  console.log('Product Data:', productData); // Debug full data
+
+  // Tìm product trong productData
+  const product = productData[productId];
+  console.log('Found Product:', product); // Debug product
+
+  // Tìm subProject, chuyển đổi ID nếu cần
+  const subProject = product?.subProjects?.find(
+    p => String(p.id) === String(subprojectId)
+  );
+  console.log('Found SubProject:', subProject); // Debug subproject
+
+  const [isVisible, setIsVisible] = useState(false);
+  const [selectedImage, setSelectedImage] = useState(null);
+  const [currentImageIndex, setCurrentImageIndex] = useState(0);
+  // const touchStartRef = useRef(null);
+  // const touchEndRef = useRef(null);
+
+  useEffect(() => {
     if (!product || !subProject) {
-      return (
-        <div className="min-h-screen bg-black text-amber-500 flex items-center justify-center">
-          Loading...
-        </div>
-      );
+      console.log('No data found, navigating back...');
+      navigate('/products');
+      return;
     }
+    setIsVisible(true);
+    window.scrollTo(0, 0);
+  }, [product, subProject, navigate]);
+
+  // Return loading state while checking data
+  if (!product || !subProject) {
+    return (
+      <div className="min-h-screen bg-black text-amber-500 flex items-center justify-center">
+        Loading...
+      </div>
+    );
+  }
 
   // Xử lý ảnh
   const handleImageClick = (image, index) => {
@@ -70,53 +70,62 @@ const SubProjectPage = () => {
   };
 
   // Touch handlers for mobile
-//   const handleTouchStart = (e) => {
-//     touchStartRef.current = {
-//       x: e.touches[0].clientX,
-//       y: e.touches[0].clientY
-//     };
-//   };
+  //   const handleTouchStart = (e) => {
+  //     touchStartRef.current = {
+  //       x: e.touches[0].clientX,
+  //       y: e.touches[0].clientY
+  //     };
+  //   };
 
-//   const handleTouchMove = (e) => {
-//     touchEndRef.current = {
-//       x: e.touches[0].clientX,
-//       y: e.touches[0].clientY
-//     };
-//   };
+  //   const handleTouchMove = (e) => {
+  //     touchEndRef.current = {
+  //       x: e.touches[0].clientX,
+  //       y: e.touches[0].clientY
+  //     };
+  //   };
 
-//   const handleTouchEnd = () => {
-//     if (!touchStartRef.current || !touchEndRef.current) return;
+  //   const handleTouchEnd = () => {
+  //     if (!touchStartRef.current || !touchEndRef.current) return;
 
-//     const deltaY = touchEndRef.current.y - touchStartRef.current.y;
-//     const deltaX = touchEndRef.current.x - touchStartRef.current.x;
+  //     const deltaY = touchEndRef.current.y - touchStartRef.current.y;
+  //     const deltaX = touchEndRef.current.x - touchStartRef.current.x;
 
-//     if (Math.abs(deltaY) > Math.abs(deltaX) && deltaY > 100) {
-//       handleCloseImage();
-//     } else if (Math.abs(deltaX) > 100) {
-//       if (deltaX > 0) {
-//         handlePrevImage();
-//       } else {
-//         handleNextImage();
-//       }
-//     }
+  //     if (Math.abs(deltaY) > Math.abs(deltaX) && deltaY > 100) {
+  //       handleCloseImage();
+  //     } else if (Math.abs(deltaX) > 100) {
+  //       if (deltaX > 0) {
+  //         handlePrevImage();
+  //       } else {
+  //         handleNextImage();
+  //       }
+  //     }
 
-//     touchStartRef.current = null;
-//     touchEndRef.current = null;
-//   };
+  //     touchStartRef.current = null;
+  //     touchEndRef.current = null;
+  //   };
 
   return (
     <div className="min-h-screen bg-black text-amber-500">
       <div className="container mx-auto px-4 py-12">
-        <button
-          onClick={() => navigate(`/products/${productId}`)}
-          className="absolute top-4 right-4 text-amber-500 hover:text-amber-400 transform hover:rotate-90 
-            transition-all duration-300"
-        >
-          <X size={32} />
-        </button>
+        <div className="flex justify-between items-center mb-8">
+          {/* Nút Trở về */}
+          <button
+            onClick={() => navigate(`/products/${productId}`)}
+            className="flex items-center gap-2 text-amber-500 hover:text-amber-400 
+                                 px-4 py-2 rounded-lg border border-amber-500/30 
+                                 hover:border-amber-500 transition-all duration-300
+                                 backdrop-blur-sm bg-amber-900/20
+                                 transform hover:translate-x-1"
+          >
+            <span>←</span>
+            <span>Trở về trang trước</span>
+          </button>
+          
+        </div>
 
         <div className={`max-w-4xl mx-auto transform transition-all duration-700 delay-100
-          ${isVisible ? 'translate-y-0 opacity-100' : 'translate-y-10 opacity-0'}`}>
+                    ${isVisible ? 'translate-y-0 opacity-100' : 'translate-y-10 opacity-0'}`}>
+          {/* Rest of your existing code... */}
           <h2 className="font-philosopher font-extrabold text-3xl text-amber-500 mb-6">
             {subProject.title}
           </h2>
@@ -151,66 +160,66 @@ const SubProjectPage = () => {
           {selectedImage && (
 
 
-    <div
-      className="relative w-full max-w-5xl mx-auto h-auto rounded-lg overflow-hidden"
-      onClick={e => e.stopPropagation()}
-    >
-      {/* Close button */}
-      <button
-        className="absolute top-2 right-2 text-amber-500 hover:text-amber-400 z-50 
+            <div
+              className="relative w-full max-w-5xl mx-auto h-auto rounded-lg overflow-hidden"
+              onClick={e => e.stopPropagation()}
+            >
+              {/* Close button */}
+              <button
+                className="absolute top-2 right-2 text-amber-500 hover:text-amber-400 z-50 
           bg-black/50 p-2 rounded-full transition-colors duration-200"
-        onClick={handleCloseImage}
-      >
-        <X size={24} />
-      </button>
-
-      <div className="relative flex flex-col items-center">
-        {/* Image container với tỷ lệ cố định */}
-        <div className="relative w-full" style={{ maxHeight: '75vh' }}>
-          <img
-            src={selectedImage.url}
-            alt={selectedImage.caption}
-            className="w-full h-full object-contain"
-          />
-
-          {/* Navigation buttons */}
-          <div className="absolute inset-y-0 left-0 right-0 flex items-center justify-between px-4">
-            {currentImageIndex > 0 && (
-              <button
-                className="text-amber-500 hover:text-amber-400 bg-black/50 p-2 rounded-full 
-                  transform transition-transform hover:scale-110 hidden md:block"
-                onClick={(e) => {
-                  e.stopPropagation();
-                  handlePrevImage();
-                }}
+                onClick={handleCloseImage}
               >
-                ←
+                <X size={24} />
               </button>
-            )}
-            {currentImageIndex < subProject.images.length - 1 && (
-              <button
-                className="text-amber-500 hover:text-amber-400 bg-black/50 p-2 rounded-full 
-                  transform transition-transform hover:scale-110 hidden md:block"
-                onClick={(e) => {
-                  e.stopPropagation();
-                  handleNextImage();
-                }}
-              >
-                →
-              </button>
-            )}
-          </div>
-        </div>
 
-        {/* Caption và mobile indicator */}
-        <div className="w-full text-center space-y-2 mt-4">
-          <p className="text-amber-200 text-sm bg-black/50 px-4 py-2 rounded-full inline-block">
-            {selectedImage.caption}
-          </p>
-        </div>
-      </div>
-    </div>
-)}
+              <div className="relative flex flex-col items-center">
+                {/* Image container với tỷ lệ cố định */}
+                <div className="relative w-full" style={{ maxHeight: '75vh' }}>
+                  <img
+                    src={selectedImage.url}
+                    alt={selectedImage.caption}
+                    className="w-full h-full object-contain"
+                  />
+
+                  {/* Navigation buttons */}
+                  <div className="absolute inset-y-0 left-0 right-0 flex items-center justify-between px-4">
+                    {currentImageIndex > 0 && (
+                      <button
+                        className="text-amber-500 hover:text-amber-400 bg-black/50 p-2 rounded-full 
+                  transform transition-transform hover:scale-110 hidden md:block"
+                        onClick={(e) => {
+                          e.stopPropagation();
+                          handlePrevImage();
+                        }}
+                      >
+                        ←
+                      </button>
+                    )}
+                    {currentImageIndex < subProject.images.length - 1 && (
+                      <button
+                        className="text-amber-500 hover:text-amber-400 bg-black/50 p-2 rounded-full 
+                  transform transition-transform hover:scale-110 hidden md:block"
+                        onClick={(e) => {
+                          e.stopPropagation();
+                          handleNextImage();
+                        }}
+                      >
+                        →
+                      </button>
+                    )}
+                  </div>
+                </div>
+
+                {/* Caption và mobile indicator */}
+                <div className="w-full text-center space-y-2 mt-4">
+                  <p className="text-amber-200 text-sm bg-black/50 px-4 py-2 rounded-full inline-block">
+                    {selectedImage.caption}
+                  </p>
+                </div>
+              </div>
+            </div>
+          )}
 
           {/* Videos */}
           {subProject.videos && subProject.videos.length > 0 && (

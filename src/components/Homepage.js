@@ -260,7 +260,7 @@ const HomePage = () => {
               transition={{ delay: 0.3, duration: 0.8 }}
             >
               <Link to="/products">
-                <button className="font-cormorant font-bold px-6 py-3 md:px-8 md:py-4 bg-[#B8860B] hover:bg-[#986D0A] text-white rounded-lg transition-all duration-300 text-lg tracking-widest uppercase font-semibold hover:scale-105">
+                <button className="font-cormorant px-6 py-3 md:px-8 md:py-4 bg-[#B8860B] hover:bg-[#986D0A] text-white rounded-lg transition-all duration-300 text-lg tracking-widest uppercase font-semibold hover:scale-105">
                   Khám Phá Công Trình
                 </button>
               </Link>

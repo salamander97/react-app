@@ -111,6 +111,7 @@ const ProductDetails = ({ product }) => {
     const [selectedImage, setSelectedImage] = useState(null);
     const [isVisible, setIsVisible] = useState(false);
     const location = useLocation();
+    const navigate = useNavigate();
 
     useEffect(() => {
         setIsVisible(true);
@@ -119,6 +120,18 @@ const ProductDetails = ({ product }) => {
 
     return (
         <main className="container mx-auto px-4 py-8 relative z-10 ">
+                        <button
+                onClick={() => navigate('/products')}
+                className="group flex items-center gap-2 text-amber-500 hover:text-amber-400 
+                         px-4 py-2 rounded-lg border border-amber-500/30 
+                         hover:border-amber-500 transition-all duration-300
+                         backdrop-blur-sm bg-amber-900/20
+                         transform hover:translate-x-1
+                         mb-8"
+            >
+                <span className="transform group-hover:-translate-x-1 transition-transform duration-300">←</span>
+                <span>Trở về danh sách công trình</span>
+            </button>
             {/* Hero Section */}
             <div className={`relative h-96 mb-12 overflow-hidden rounded-lg transform transition-all duration-1000
             ${isVisible ? 'translate-y-0 opacity-100' : 'translate-y-10 opacity-0'}`}>
@@ -130,6 +143,7 @@ const ProductDetails = ({ product }) => {
                         onClick={() => setSelectedImage({ src: product.image, title: product.title })}
                     />
                 </div>
+                
                 <div className="absolute inset-0 bg-gradient-to-t from-black via-black/50 to-transparent" />
                 <div className="absolute bottom-8 left-8 group">
                     <h1 className="font-philosopher font-extrabold text-4xl text-amber-500 transform hover:translate-x-2 transition-all duration-500 relative">

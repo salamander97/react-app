@@ -50,14 +50,6 @@ const SubProjectCard = ({ project, product }) => {
     const navigate = useNavigate();
 
     const handleClick = () => {
-        console.log('Debug SubProjectCard:', {
-            fullProduct: product,
-            hasSlug: !!product.slug,
-            slug: product.slug,
-            projectId: project.id,
-            intendedURL: `/products/${product.slug}/${project.id}`
-        });
-
         if (!product.slug) {
             console.error('Product is missing slug!', product);
             return;

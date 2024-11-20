@@ -288,22 +288,12 @@ const Products = () => {
   const { slug } = useParams();
   const location = useLocation();
 
-  console.log('Products component:', {
-    receivedSlug: slug,
-    allProducts: Object.values(productData).map(p => ({
-      id: p.id,
-      slug: p.slug,
-      title: p.title
-    }))
-  });
 
   const currentProduct = slug
     ? Object.values(productData).find(p =>
       String(p.id) === slug || p.slug === slug
     )
     : null;
-  console.log('Found product:', currentProduct);
-
   useEffect(() => {
     window.scrollTo(0, 0);
   }, [location.pathname]);

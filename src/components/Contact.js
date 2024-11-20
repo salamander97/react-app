@@ -48,10 +48,8 @@ const Contact = () => {
             'OhoWm3Gtb9Rqs-o29'
         )
             .then((result) => {
-                console.log('Email gửi thành công:', result.text);
                 alert('Tin nhắn của bạn đã được gửi thành công!');
             }, (error) => {
-                console.error('Gửi email thất bại:', error.text);
                 alert('Đã xảy ra lỗi, vui lòng thử lại.');
             });
 

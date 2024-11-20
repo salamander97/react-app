@@ -16,7 +16,6 @@ const SubProjectPage = () => {
   const subProject = product?.subProjects?.find(
     p => String(p.id) === String(subprojectId)
   );
-  console.log('7. Found SubProject:', subProject);
 
   const [isVisible, setIsVisible] = useState(false);
   const [selectedImage, setSelectedImage] = useState(null);
@@ -24,12 +23,6 @@ const SubProjectPage = () => {
 
   useEffect(() => {
     if (!product || !subProject) {
-      console.log('4. Navigation triggered:', {
-        hasProduct: !!product,
-        hasSubProject: !!subProject,
-        productSlug,
-        subprojectId
-      });
       navigate('/products');
       return;
     }

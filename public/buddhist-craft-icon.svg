@@ -1,0 +1,64 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+  <!-- Gradient định nghĩa -->
+  <defs>
+    <linearGradient id="goldGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#FFD700"/>
+      <stop offset="50%" style="stop-color:#DAA520"/>
+      <stop offset="100%" style="stop-color:#B8860B"/>
+    </linearGradient>
+    <filter id="glow">
+      <feGaussianBlur stdDeviation="3" result="coloredBlur"/>
+      <feMerge>
+        <feMergeNode in="coloredBlur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+  </defs>
+
+  <!-- Vòng tròn nền -->
+  <circle cx="256" cy="256" r="240" 
+          fill="url(#goldGradient)" 
+          stroke="#B8860B" 
+          stroke-width="8"/>
+
+  <!-- Họa tiết hoa văn trang trí xung quanh -->
+  <g fill="none" stroke="#FFD700" stroke-width="4" filter="url(#glow)">
+    {/* 8 đường trang trí xung quanh */}
+    <path d="M256 16 L256 96" />
+    <path d="M256 416 L256 496" />
+    <path d="M16 256 L96 256" />
+    <path d="M416 256 L496 256" />
+    <path d="M76 76 L136 136" />
+    <path d="M376 376 L436 436" />
+    <path d="M376 136 L436 76" />
+    <path d="M76 436 L136 376" />
+  </g>
+
+  <!-- Biểu tượng chính giữa -->
+  <g transform="translate(256 256)">
+    <!-- Vòng tròn trang trí -->
+    <circle r="120" 
+            fill="none" 
+            stroke="#FFD700" 
+            stroke-width="12"
+            filter="url(#glow)"/>
+    
+    <!-- Biểu tượng bánh xe pháp luân đơn giản hóa -->
+    <g fill="#FFD700" filter="url(#glow)">
+      <circle r="40"/>
+      {/* 8 nan hoa */}
+      <rect x="-8" y="-60" width="16" height="120" rx="8"/>
+      <rect x="-8" y="-60" width="16" height="120" rx="8" transform="rotate(45)"/>
+      <rect x="-8" y="-60" width="16" height="120" rx="8" transform="rotate(90)"/>
+      <rect x="-8" y="-60" width="16" height="120" rx="8" transform="rotate(135)"/>
+    </g>
+  </g>
+
+  <!-- Họa tiết trang trí góc -->
+  <g fill="#FFD700" filter="url(#glow)">
+    <circle cx="80" cy="80" r="24"/>
+    <circle cx="432" cy="80" r="24"/>
+    <circle cx="80" cy="432" r="24"/>
+    <circle cx="432" cy="432" r="24"/>
+  </g>
+</svg>
